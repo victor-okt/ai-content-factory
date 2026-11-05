@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "status": "awaiting_first_run",
+  "last_checked_at": null,
+  "last_success_at": null,
+  "feed_checks": [],
+  "errors": [],
+  "ideas": [],
+  "disclaimer": "Belum ada hasil riset nyata. Laporan muncul setelah workflow GitHub Actions dijalankan."
+}
