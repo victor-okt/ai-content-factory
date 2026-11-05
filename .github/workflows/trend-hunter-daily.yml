@@ -36,6 +36,8 @@ jobs:
         run: |
           node --check office/live.js
           node --check office/factory.js
+          python scripts/extract_inline_script.py
+          node --check /tmp/pixel-office-inline.js
       - name: Collect public signals
         run: python -m trendhunter.daily
       - name: Build free creative drafts for Agent 2-6
