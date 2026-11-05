@@ -59,12 +59,33 @@ function sprite(x,y,a,index,walking){const px=Math.round(x),py=Math.round(y),ste
 if(Math.floor(t*.33+index)%9===0){R(px-8,py-22,46,13,'#294b63');R(px-6,py-20,42,9,index===0?'#b2f1d8':'#cad9e5');Txt(index===0?'IDEA!':'...',px+2,py-19,'#314859',8)}}
 function tick(dt){t+=dt;workers.forEach((o,i)=>{const z=zones[i];o.next-=dt;if(o.next<=0&&!o.walking){o.tx=z.x+25+Math.random()*155;o.ty=z.y+70+Math.random()*43;o.walking=true;o.next=2+Math.random()*4}if(o.walking){const dx=o.tx-o.x,dy=o.ty-o.y,d=Math.hypot(dx,dy);const speed=15+i*1.8;if(d<speed*dt+1){o.x=o.tx;o.y=o.ty;o.walking=false;o.next=1.2+Math.random()*2.2}else{o.x+=dx/d*speed*dt;o.y+=dy/d*speed*dt}}});}
 function draw(){scene();for(let i=0;i<6;i++)room(i);for(let i=0;i<6;i++){const o=workers[i];sprite(o.x,o.y-(o.walking?Math.abs(Math.sin(t*13+i))*2:0),agents[i],i,o.walking)}}function animate(now){const dt=Math.min(.07,(now-last)/1000||0);last=now;if(!paused)tick(dt);draw();requestAnimationFrame(animate)}
-function pick(i){selected=i;const a=agents[i];document.getElementById('agent-code').textContent=`AGENT ${String(i+1).padStart(2,'0')} / 06`;document.getElementById('agent-name').textContent=a.title;document.getElementById('agent-role').textContent=a.role;document.getElementById('char-name').textContent=a.n;document.getElementById('portrait').textContent=a.emoji;document.getElementById('char-desc').textContent='Karakter bergerak di kantor virtual.';document.getElementById('agent-desc').textContent=a.desc;document.getElementById('agent-status').textContent=a.active?'● RISET OTOMATIS AKTIF':'■ BELUM DIBANGUN';document.getElementById('agent-status').className='status'+(a.active?'':' lock');document.getElementById('agent-results').textContent=a.active?'Memuat laporan':'Belum ada';document.getElementById('agent-data').textContent='Memuat laporan';document.getElementById('agent-next').textContent=a.active?'Baca sumber laporan':'Menunggu agent sebelumnya';const b=document.getElementById('open-results');b.disabled=!a.active;b.textContent=a.active?'▤ LIHAT HASIL DEMO':'⌑ AGENT MASIH TERKUNCI';document.getElementById('agent-help').textContent=a.active?'Menampilkan contoh hasil pengujian; tidak melakukan riset baru atau memakai kredit.':'Ruangan bisa dijelajahi, tetapi fungsi kerja agent ini belum dibuat.';document.getElementById('results').hidden=true}
+function pick(i){
+ selected=i;const a=agents[i];
+ document.getElementById('agent-code').textContent=`AGENT ${String(i+1).padStart(2,'0')} / 06`;
+ document.getElementById('agent-name').textContent=a.title;
+ document.getElementById('agent-role').textContent=a.role;
+ document.getElementById('char-name').textContent=a.n;
+ document.getElementById('portrait').textContent=a.emoji;
+ document.getElementById('char-desc').textContent='Karakter bergerak di kantor virtual.';
+ document.getElementById('agent-desc').textContent=a.desc;
+ const labels=['● RISET BERJALAN','● TEMPLATE KREATIF SIAP','● PROMPT GAMBAR SIAP','◌ RENDER BELUM TERHUBUNG','◌ POSTING BELUM TERHUBUNG','◌ ANALYTICS BELUM TERHUBUNG'];
+ const help=['Riset publik, bukan metrik TikTok.','Hook, skrip dan storyboard otomatis. Belum generatif.','Prompt visual tersedia; belum menghasilkan gambar.','Timeline dan prompt video siap; rendering butuh provider dan kredit.','Caption draft siap; posting butuh akun dan persetujuan.','Hanya data proses internal; views dan pendapatan belum tersedia.'];
+ document.getElementById('agent-status').textContent=labels[i];
+ document.getElementById('agent-status').className='status'+(i>2?' lock':'');
+ document.getElementById('agent-results').textContent=i===0?'Memuat laporan':i===1?'Storyboard draft':i===2?'Prompt siap':'Belum tersedia';
+ document.getElementById('agent-data').textContent=i===0?'Memuat laporan':i<=2?'Gratis / template':'Belum ada integrasi';
+ document.getElementById('agent-next').textContent=i===0?'Baca sumber laporan':'Buka Studio Produksi';
+ const btn=document.getElementById('open-results');
+ btn.disabled=false;
+ btn.textContent=i===0?'▤ BUKA LAPORAN NOVA':'▤ BUKA STUDIO PRODUKSI';
+ document.getElementById('agent-help').textContent=help[i];
+ document.getElementById('results').hidden=true;
+}
 canvas.addEventListener('click',e=>{const box=canvas.getBoundingClientRect(),px=(e.clientX-box.left)*w/box.width,py=(e.clientY-box.top)*h/box.height;let nearest=-1,best=Infinity;workers.forEach((o,i)=>{let d=Math.hypot(px-o.x-12,py-o.y-17);if(d<28&&d<best){nearest=i;best=d}});if(nearest>=0)return pick(nearest);for(let i=0;i<6;i++){const z=zones[i];if(px>=z.x&&px<=z.x+z.w&&py>=z.y&&py<=z.y+z.h)return pick(i)}});
 document.getElementById('pause').onclick=()=>{paused=!paused;document.getElementById('pause').textContent=paused?'▶ LANJUTKAN':'❚❚ PAUSE'};
 document.getElementById('lighting').onclick=()=>{day=!day;document.getElementById('lighting').textContent=day?'☾ MODE MALAM':'☀ MODE SIANG'};
 document.getElementById('wander').onclick=()=>{const o=workers[selected],z=zones[selected];o.tx=z.x+25+Math.random()*150;o.ty=z.y+70+Math.random()*35;o.walking=true;o.next=4;paused=false;document.getElementById('pause').textContent='❚❚ PAUSE'};
 const idearoot=document.getElementById('ideas');ideas.forEach((idea,i)=>{const card=document.createElement('div');card.className='idea';const sc=document.createElement('div');sc.className='score';sc.textContent='★ '+idea.score+'/100';const name=document.createElement('b');name.textContent=idea.title;const p=document.createElement('p');p.textContent=idea.text;const btn=document.createElement('button');btn.className='pixel-btn secondary';btn.textContent='PILIH IDE DEMO';btn.addEventListener('click',()=>{chosen=i;[...idearoot.children].forEach((el,j)=>{el.classList.toggle('chosen',j===chosen);el.querySelector('button').textContent=j===chosen?'✓ DIPILIH (DEMO)':'PILIH IDE DEMO'});document.getElementById('feedback').textContent=`Konsep “${idea.title}” dipilih dalam DEMO. Belum tersimpan di server atau dikirim ke Agent 2.`});card.append(sc,name,p,btn);idearoot.append(card)});
-document.getElementById('open-results').onclick=()=>{document.getElementById('results').hidden=false;document.getElementById('results').scrollIntoView({behavior:'smooth',block:'nearest'})};document.getElementById('close-results').onclick=()=>{document.getElementById('results').hidden=true};pick(0);requestAnimationFrame(animate);
+document.getElementById('open-results').onclick=()=>{const target=selected===0?document.getElementById('results'):document.getElementById('factory-panel');if(target){if(selected===0)target.hidden=false;target.scrollIntoView({behavior:'smooth',block:'nearest'})}};document.getElementById('close-results').onclick=()=>{document.getElementById('results').hidden=true};pick(0);requestAnimationFrame(animate);
 })();
 </script><script src="./live.js"></script><script src="./factory.js"></script></body></html>

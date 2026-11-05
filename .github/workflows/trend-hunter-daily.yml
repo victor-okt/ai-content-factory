@@ -33,7 +33,9 @@ jobs:
       - name: Validate Agent 1
         run: python -m unittest discover -s tests -v
       - name: Validate Pixel Office JavaScript
-        run: node --check office/live.js
+        run: |
+          node --check office/live.js
+          node --check office/factory.js
       - name: Collect public signals
         run: python -m trendhunter.daily
       - name: Build free creative drafts for Agent 2-6
