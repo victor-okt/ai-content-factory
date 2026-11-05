@@ -1,5 +1,10 @@
 name: Trend Hunter - Daily research
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/trend-hunter-daily.yml'
+      - 'trendhunter/**'
   workflow_dispatch:
   schedule:
     - cron: '23 0 * * *'
