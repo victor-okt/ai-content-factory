@@ -16,6 +16,7 @@ from html import unescape
 from pathlib import Path
 from collections import Counter
 from .quality import rejection, title_key, assess, ANGLES, laboratory_seeds
+from .community import FEEDS, atom_items, community_idea
 
 WIB = timezone(timedelta(hours=7))
 TREND_URL = "https://trends.google.com/trending/rss?geo=ID"
@@ -135,19 +136,19 @@ def run(fetcher=fetch, when=None, root="."):
     sources = [("trends", TREND_URL)] + [
         ("news", "https://news.google.com/rss/search?q=" + urllib.parse.quote(q) + "&hl=id&gl=ID&ceid=ID:id")
         for q in NEWS_QUERIES
-    ]
+    ] + list(FEEDS)
     results, errors, checks, rejected = [], [], [], Counter()
     for kind, url in sources:
         try:
-            items = rss_items(fetcher(url))
+            items = atom_items(fetcher(url)) if kind == "community" else rss_items(fetcher(url))
             accepted = 0
             for item in items:
-                candidate = idea_from(item, kind, day)
+                candidate = community_idea(item, day) if kind == "community" else idea_from(item, kind, day)
                 if candidate:
                     results.append(candidate)
                     accepted += 1
                 else:
-                    rejected[rejection(item.get("title",""),kind) or "lainnya"] += 1
+                    rejected["komunitas_tidak_lolos" if kind == "community" else (rejection(item.get("title",""),kind) or "lainnya")] += 1
             checks.append({"source": kind, "url": url, "feed_items": len(items), "accepted": accepted})
         except (OSError, ValueError, ET.ParseError, TimeoutError) as exc:
             errors.append(kind + ": " + type(exc).__name__ + " " + str(exc)[:120])
@@ -159,12 +160,12 @@ def run(fetcher=fetch, when=None, root="."):
         seen[item["content_id"]] = item["first_seen_at"]
     current.sort(key=lambda item: (-item["score"], item["seen_before"], item["title"]))
     stamp = clock.isoformat(timespec="seconds")
-    status = ("partial" if errors else "ok") if current else ("error" if errors else "empty")
+    status = ("partial" if errors else "ok") if current else ("partial" if errors and checks else ("error" if errors else "empty"))
     previous_ideas = previous.get("ideas", []) if isinstance(previous.get("ideas"), list) else []
     if not current and errors and previous_ideas:
         status = "stale"
     payload = {
-        "schema_version": 1, "agent_version": "1.2", "status": status, "last_checked_at": stamp,
+        "schema_version": 1, "agent_version": "1.3", "status": status, "last_checked_at": stamp,
         "last_success_at": stamp if current else previous.get("last_success_at"),
         "feed_checks": checks, "errors": errors,
         "quality_control": {"items_scanned": sum(x["feed_items"] for x in checks),
@@ -175,7 +176,7 @@ def run(fetcher=fetch, when=None, root="."):
                     "top_candidate_ids": [i["content_id"] for i in current[:3]],
                     "lab_candidate_ids": [i["content_id"] for i in laboratory_seeds()] if not current else [],
                     "note": "Agent 2 belum dijalankan, perlu persetujuan pengguna."},
-        "disclaimer": "Sinyal Google Trends/News publik, bukan analytics TikTok. Skor adalah kecocokan kreatif, bukan peluang viral atau penghasilan."
+        "disclaimer": "Sumber publik Google Trends, berita dan komunitas AI video. Bukan analytics TikTok. Skor kecocokan kreatif bukan peluang viral atau penghasilan."
     }
     latest_path.parent.mkdir(parents=True, exist_ok=True)
     latest_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
