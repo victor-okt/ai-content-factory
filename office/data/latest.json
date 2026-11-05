@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "agent_version": "1.3",
-  "status": "partial",
-  "last_checked_at": "2026-11-05T22:08:55+07:00",
-  "last_success_at": "2026-11-05T22:08:55+07:00",
+  "status": "ok",
+  "last_checked_at": "2026-11-05T22:11:38+07:00",
+  "last_success_at": "2026-11-05T22:11:38+07:00",
   "feed_checks": [
     {
       "source": "trends",
@@ -44,7 +44,7 @@
     {
       "source": "news",
       "url": "https://news.google.com/rss/search?q=animasi%203d%20kucing%20video%20pendek&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 8,
+      "feed_items": 9,
       "accepted": 0
     },
     {
@@ -57,62 +57,22 @@
       "source": "community",
       "url": "https://www.reddit.com/r/aivideos/new/.rss",
       "feed_items": 25,
-      "accepted": 4
+      "accepted": 2
     }
   ],
-  "errors": [
-    "community: HTTPError HTTP Error 429: Too Many Requests"
-  ],
+  "errors": [],
   "quality_control": {
-    "items_scanned": 86,
-    "qualified_unique": 4,
+    "items_scanned": 87,
+    "qualified_unique": 2,
     "rejected_by_reason": {
       "bukan_hiburan": 10,
-      "komunitas_tidak_lolos": 21,
+      "komunitas_tidak_lolos": 23,
       "lainnya": 7,
       "tidak_spesifik_visual": 26,
-      "tutorial_atau_promosi": 18
+      "tutorial_atau_promosi": 19
     }
   },
   "ideas": [
-    {
-      "content_id": "COMM-1XOFEYU",
-      "title": "Cat",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xofeyu/cat/",
-      "observed_at": "2026-11-05",
-      "category": "surreal_comedy",
-      "concept": "Contoh unggahan video komunitas: Cat. Inspirasi orisinal: Bangun kejutan visual yang lucu dan mudah dimengerti tanpa dialog.",
-      "score": 79,
-      "score_label": "Kecocokan konsep, bukan tingkat viral",
-      "score_breakdown": {
-        "relevance": 79,
-        "visual_hook": 0,
-        "freshness": 0,
-        "source": 0
-      },
-      "confidence": "rendah",
-      "why_recommended": [
-        "Ada tautan unggahan video di komunitas AI video",
-        "Judul sesuai inspirasi hiburan visual",
-        "Tidak ada metrik views TikTok terverifikasi"
-      ],
-      "source_type": "community_post",
-      "signal_source": "Komunitas AI Video Reddit",
-      "evidence_label": "Posting komunitas; bukan bukti viral atau statistik TikTok",
-      "metrics_verified": false,
-      "approval_status": "menunggu_persetujuan",
-      "creative_brief": {
-        "idea_id": "COMM-1XOFEYU",
-        "duration_seconds": 12,
-        "ratio": "9:16",
-        "angle": "Bangun kejutan visual yang lucu dan mudah dimengerti tanpa dialog.",
-        "source_url": "https://www.reddit.com/r/aivideos/comments/1xofeyu/cat/",
-        "guidance": "Buat karya orisinal; jangan menyalin footage atau desain milik pembuat asal."
-      },
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-05",
-      "seen_before": false
-    },
     {
       "content_id": "COMM-1XOG640",
       "title": "CLEANING EVENT | Sci-Fi Short Film",
@@ -149,7 +109,7 @@
       },
       "next_agent": "creative_director",
       "first_seen_at": "2026-11-05",
-      "seen_before": false
+      "seen_before": true
     },
     {
       "content_id": "COMM-1XOFIPJ",
@@ -187,45 +147,7 @@
       },
       "next_agent": "creative_director",
       "first_seen_at": "2026-11-05",
-      "seen_before": false
-    },
-    {
-      "content_id": "COMM-1XOC8NE",
-      "title": "Got Myself Seedance 2.5 Plan, and Immediately Try to Make An Anime Cooking Scenes :D",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xoc8ne/got_myself_seedance_25_plan_and_immediately_try/",
-      "observed_at": "2026-11-05",
-      "category": "visual_transformation",
-      "concept": "Contoh unggahan video komunitas: Got Myself Seedance 2.5 Plan, and Immediately Try to Make An Anime Cooking Scenes :D. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-      "score": 73,
-      "score_label": "Kecocokan konsep, bukan tingkat viral",
-      "score_breakdown": {
-        "relevance": 73,
-        "visual_hook": 0,
-        "freshness": 0,
-        "source": 0
-      },
-      "confidence": "rendah",
-      "why_recommended": [
-        "Ada tautan unggahan video di komunitas AI video",
-        "Judul sesuai inspirasi hiburan visual",
-        "Tidak ada metrik views TikTok terverifikasi"
-      ],
-      "source_type": "community_post",
-      "signal_source": "Komunitas AI Video Reddit",
-      "evidence_label": "Posting komunitas; bukan bukti viral atau statistik TikTok",
-      "metrics_verified": false,
-      "approval_status": "menunggu_persetujuan",
-      "creative_brief": {
-        "idea_id": "COMM-1XOC8NE",
-        "duration_seconds": 12,
-        "ratio": "9:16",
-        "angle": "Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-        "source_url": "https://www.reddit.com/r/aivideos/comments/1xoc8ne/got_myself_seedance_25_plan_and_immediately_try/",
-        "guidance": "Buat karya orisinal; jangan menyalin footage atau desain milik pembuat asal."
-      },
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-05",
-      "seen_before": false
+      "seen_before": true
     }
   ],
   "creative_seeds": [],
@@ -233,7 +155,6 @@
     "next_agent": "creative_director",
     "approval": "pending",
     "top_candidate_ids": [
-      "COMM-1XOFEYU",
       "COMM-1XOG640",
       "COMM-1XOFIPJ"
     ],
