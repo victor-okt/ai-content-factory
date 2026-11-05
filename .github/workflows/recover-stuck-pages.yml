@@ -1,4 +1,4 @@
-name: Clean inactive duplicate Pages deployment
+name: Clear obsolete Pages deployment lock
 on:
   push:
     branches: [main]
@@ -8,23 +8,25 @@ permissions:
   contents: read
   deployments: write
 jobs:
-  recover-inactive-only:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
-      - name: Verify legacy deployment matches expected SHA and inactive status
+      - name: Verify exact obsolete deployment
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          id=7583266180
+          id=7583273886
           expected=bc3d6f787749cb99a60d8f4d90a8a4aacfa858aa
           actual=$(gh api "repos/$GITHUB_REPOSITORY/deployments/$id" --jq '.sha')
-          state=$(gh api "repos/$GITHUB_REPOSITORY/deployments/$id/statuses?per_page=1" --jq '.[0].state')
-          echo "Record state: $state"
           test "$actual" = "$expected"
-          test "$state" = "inactive"
-          echo "Only the inactive duplicate is eligible for cleanup."
-      - name: Remove old inactive duplicate record
+          echo "Only old GitHub deployment $id is selected; repository and site source are unchanged."
+      - name: Mark legacy Pages deployment as superseded
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api -X DELETE "repos/$GITHUB_REPOSITORY/deployments/7583266180"
+          gh api -X POST "repos/$GITHUB_REPOSITORY/deployments/7583273886/statuses" -f state=inactive -f description="Superseded; cleanup after stale Pages lock."
+      - name: Delete only this obsolete deployment record
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X DELETE "repos/$GITHUB_REPOSITORY/deployments/7583273886"
