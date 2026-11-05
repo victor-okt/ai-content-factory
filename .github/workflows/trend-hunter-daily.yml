@@ -10,11 +10,16 @@ on:
     - cron: '23 0 * * *'
 permissions:
   contents: write
+  pages: write
+  id-token: write
 concurrency:
-  group: trend-hunter-daily
+  group: pixel-office
   cancel-in-progress: false
 jobs:
   research:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -35,3 +40,12 @@ jobs:
             git commit -m 'data: update public trend signals'
             git push
           fi
+      - name: Prepare GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pixel Office
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./office
+      - name: Publish latest Trend Hunter report
+        id: deploy
+        uses: actions/deploy-pages@v4
