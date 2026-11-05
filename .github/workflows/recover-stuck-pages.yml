@@ -1,4 +1,4 @@
-name: Diagnose old GitHub Pages deployment (read only)
+name: Clean inactive duplicate Pages deployment
 on:
   push:
     branches: [main]
@@ -6,30 +6,25 @@ on:
       - '.github/workflows/recover-stuck-pages.yml'
 permissions:
   contents: read
-  deployments: read
-  pages: read
+  deployments: write
 jobs:
-  diagnose:
+  recover-inactive-only:
     runs-on: ubuntu-latest
     steps:
-      - name: Check last successful Pages record
+      - name: Verify legacy deployment matches expected SHA and inactive status
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api "repos/$GITHUB_REPOSITORY/pages/deployments/bc3d6f787749cb99a60d8f4d90a8a4aacfa858aa" || true
-      - name: Show deployment records for Pages environment
+          id=7583266180
+          expected=bc3d6f787749cb99a60d8f4d90a8a4aacfa858aa
+          actual=$(gh api "repos/$GITHUB_REPOSITORY/deployments/$id" --jq '.sha')
+          state=$(gh api "repos/$GITHUB_REPOSITORY/deployments/$id/statuses?per_page=1" --jq '.[0].state')
+          echo "Record state: $state"
+          test "$actual" = "$expected"
+          test "$state" = "inactive"
+          echo "Only the inactive duplicate is eligible for cleanup."
+      - name: Remove old inactive duplicate record
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api "repos/$GITHUB_REPOSITORY/deployments?environment=github-pages&per_page=20" --jq '.[] | {id, sha, environment, created_at}' || true
-      - name: Check recent statuses for the two old deployments
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          for id in 7583273886 7583266180; do
-            echo "DEPLOYMENT ID: $id"
-            gh api "repos/$GITHUB_REPOSITORY/deployments/$id/statuses?per_page=8" --jq '.[] | {state, created_at, description, environment}' || true
-          done
-      - name: Explain diagnosis
-        run: |
-          echo "READ ONLY diagnostic; no deployment will be deleted or cancelled."
+          gh api -X DELETE "repos/$GITHUB_REPOSITORY/deployments/7583266180"
