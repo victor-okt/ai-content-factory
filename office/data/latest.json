@@ -2,7 +2,7 @@
   "schema_version": 1,
   "agent_version": "1.2",
   "status": "empty",
-  "last_checked_at": "2026-11-05T18:32:14+07:00",
+  "last_checked_at": "2026-11-05T18:35:09+07:00",
   "last_success_at": "2026-11-05T18:10:49+07:00",
   "feed_checks": [
     {
@@ -54,10 +54,96 @@
     }
   },
   "ideas": [],
+  "creative_seeds": [
+    {
+      "content_id": "LAB-CARD-01",
+      "title": "Kartu monster orisinal menjadi hidup",
+      "concept": "Sebuah kartu koleksi bergetar; karakter original keluar dari kartu dan melompat menembus kamera.",
+      "score": null,
+      "source_type": "editorial_seed",
+      "signal_source": "Laboratorium Ide • bukan data tren",
+      "evidence_label": "Ide kreatif internal, belum ada bukti tren atau views",
+      "observed_at": null,
+      "source_url": "",
+      "metrics_verified": false,
+      "approval_status": "menunggu_persetujuan",
+      "category": "object_comes_alive",
+      "why_recommended": [
+        "Visual mudah dimengerti tanpa dialog",
+        "Bisa diuji dalam 8–15 detik"
+      ],
+      "creative_brief": {
+        "idea_id": "LAB-CARD-01",
+        "ratio": "9:16",
+        "duration_seconds": 12,
+        "hook": "Tampilkan perubahan visual pada 2 detik pertama",
+        "creative_angle": "Sebuah kartu koleksi bergetar; karakter original keluar dari kartu dan melompat menembus kamera.",
+        "source_url": ""
+      }
+    },
+    {
+      "content_id": "LAB-MINI-02",
+      "title": "Meja kerja berubah menjadi kota mini",
+      "concept": "Sebuah pulpen jatuh; seluruh meja menjadi kota mini dengan jalan dan kendaraan mungil.",
+      "score": null,
+      "source_type": "editorial_seed",
+      "signal_source": "Laboratorium Ide • bukan data tren",
+      "evidence_label": "Ide kreatif internal, belum ada bukti tren atau views",
+      "observed_at": null,
+      "source_url": "",
+      "metrics_verified": false,
+      "approval_status": "menunggu_persetujuan",
+      "category": "miniature_world",
+      "why_recommended": [
+        "Visual mudah dimengerti tanpa dialog",
+        "Bisa diuji dalam 8–15 detik"
+      ],
+      "creative_brief": {
+        "idea_id": "LAB-MINI-02",
+        "ratio": "9:16",
+        "duration_seconds": 12,
+        "hook": "Tampilkan perubahan visual pada 2 detik pertama",
+        "creative_angle": "Sebuah pulpen jatuh; seluruh meja menjadi kota mini dengan jalan dan kendaraan mungil.",
+        "source_url": ""
+      }
+    },
+    {
+      "content_id": "LAB-PET-03",
+      "title": "Kucing mengendalikan robot kecil",
+      "concept": "Seekor kucing menyentuh mainan; robot kecil tersadar lalu beraksi lucu dalam 12 detik.",
+      "score": null,
+      "source_type": "editorial_seed",
+      "signal_source": "Laboratorium Ide • bukan data tren",
+      "evidence_label": "Ide kreatif internal, belum ada bukti tren atau views",
+      "observed_at": null,
+      "source_url": "",
+      "metrics_verified": false,
+      "approval_status": "menunggu_persetujuan",
+      "category": "surreal_comedy",
+      "why_recommended": [
+        "Visual mudah dimengerti tanpa dialog",
+        "Bisa diuji dalam 8–15 detik"
+      ],
+      "creative_brief": {
+        "idea_id": "LAB-PET-03",
+        "ratio": "9:16",
+        "duration_seconds": 12,
+        "hook": "Tampilkan perubahan visual pada 2 detik pertama",
+        "creative_angle": "Seekor kucing menyentuh mainan; robot kecil tersadar lalu beraksi lucu dalam 12 detik.",
+        "source_url": ""
+      }
+    }
+  ],
   "handoff": {
     "next_agent": "creative_director",
     "approval": "pending",
-    "top_candidate_ids": []
+    "top_candidate_ids": [],
+    "lab_candidate_ids": [
+      "LAB-CARD-01",
+      "LAB-MINI-02",
+      "LAB-PET-03"
+    ],
+    "note": "Agent 2 belum dijalankan, perlu persetujuan pengguna."
   },
   "disclaimer": "Sinyal Google Trends/News publik, bukan analytics TikTok. Skor adalah kecocokan kreatif, bukan peluang viral atau penghasilan."
 }
