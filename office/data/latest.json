@@ -2,7 +2,7 @@
   "schema_version": 1,
   "agent_version": "1.2",
   "status": "empty",
-  "last_checked_at": "2026-11-05T18:35:09+07:00",
+  "last_checked_at": "2026-11-05T18:36:23+07:00",
   "last_success_at": "2026-11-05T18:10:49+07:00",
   "feed_checks": [
     {
@@ -48,8 +48,8 @@
     "qualified_unique": 0,
     "rejected_by_reason": {
       "bukan_hiburan": 10,
-      "lainnya": 4,
-      "tidak_spesifik_visual": 18,
+      "lainnya": 5,
+      "tidak_spesifik_visual": 17,
       "tutorial_atau_promosi": 14
     }
   },
