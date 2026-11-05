@@ -39,6 +39,23 @@ class CommunityFeedTests(unittest.TestCase):
     def test_sensitive_post_does_not_qualify(self):
         item=atom_items(feed(title="Murder video shows animated robot"))[0]
         self.assertIsNone(community_idea(item,DAY))
+    def test_generic_trailers_rejected(self):
+        for title in [
+            "Side by Side Trailer",
+            "Maximum Perception | Cult Classic Remake | Trailer",
+            "I have finally created my first short film with Minimax."
+        ]:
+            item=atom_items(feed(title=title))[0]
+            self.assertIsNone(community_idea(item,DAY))
+
+    def test_firework_unsafe_reference_rejected(self):
+        item=atom_items(feed(title="A monster firework in 3d fantasy video"))[0]
+        self.assertIsNone(community_idea(item,DAY))
+
+    def test_genuinely_visual_short_still_accepted(self):
+        item=atom_items(feed(title="A sci-fi short film with an alien robot"))[0]
+        self.assertIsNotNone(community_idea(item,DAY))
+
     def test_old_video_does_not_qualify(self):
         item=atom_items(feed(published="2026-09-05T12:00:00+00:00"))[0]
         self.assertIsNone(community_idea(item,DAY))

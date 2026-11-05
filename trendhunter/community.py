@@ -20,18 +20,18 @@ EXCLUDE = re.compile(
     r"\b(how do|how to|tutorial|help|looking for|which ai|which tool|"
     r"question|pricing|price|free ai|please help|need help|"
     r"feedback|giveaway|discount|prompt|prompts|course|kursus|"
-    r"subscription|plan|got myself|" 
+    r"subscription|plan|got myself|trailer|remake|my first|first short film|" 
     r"cara membuat|software|app review|subscription)\b", re.I
 )
 UNSAFE = re.compile(
     r"\b(gore|death|suicide|abuse|murder|murdered|killed|"
     r"tragedy|tragedi|kecelakaan|bunuh|tewas|meninggal|"
-    r"pembunuhan|kekerasan|terror)\b", re.I
+    r"pembunuhan|kekerasan|terror|fireworks?|explosive|bomb|grenade)\b", re.I
 )
 VISUAL = re.compile(
     r"\b(animation|animated|animasi|anime|fantasy|fantasi|miniature|"
     r"toy|figure|character|characters|creature|surreal|cartoon|"
-    r"short film|stop motion|3d|cat|dog|robot|world|film|story|"
+    r"stop motion|3d|cat|dog|robot|world|sci.fi|sci fi|dragon|wolf|viking|alien|spaceship|"
     r"monster|cute|horror|funny|comedy|trailer|magic)\b", re.I
 )
 
