@@ -30,6 +30,12 @@ class CommunityFeedTests(unittest.TestCase):
     def test_help_question_does_not_qualify(self):
         item=atom_items(feed(title="How to make an animated toy video"))[0]
         self.assertIsNone(community_idea(item,DAY))
+    def test_title_too_generic_rejected(self):
+        item=atom_items(feed(title="Cat"))[0]
+        self.assertIsNone(community_idea(item,DAY))
+    def test_tool_plan_discussion_rejected(self):
+        item=atom_items(feed(title="Got myself Seedance plan for anime cooking scenes"))[0]
+        self.assertIsNone(community_idea(item,DAY))
     def test_sensitive_post_does_not_qualify(self):
         item=atom_items(feed(title="Murder video shows animated robot"))[0]
         self.assertIsNone(community_idea(item,DAY))
