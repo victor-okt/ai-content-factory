@@ -13,11 +13,13 @@ function apply(){
  var sourced=Array.isArray(data?.ideas)?data.ideas:[];
  var list=sourced.length?sourced:(Array.isArray(data?.creative_seeds)?data.creative_seeds:[]);
  var lab=!sourced.length&&list.length>0;
+ var community=sourced.filter(function(item){return item.source_type==='community_post';}).length;
+ var publicNews=sourced.length-community;
  status.textContent='● '+(data?.status==='stale'?'LAPORAN LAMA • SUMBER ERROR':data?.status==='empty'?'0 TREN COCOK • IDE LAB TERSEDIA':String(data?.status||'MENUNGGU LAPORAN').toUpperCase());
- setText('agent-results',sourced.length+' ide riset • '+(lab?list.length+' ide eksperimen • ':'')+(data?.quality_control?.items_scanned ?? '?')+' sinyal dicek');
+ setText('agent-results',community+' video komunitas • '+publicNews+' sinyal berita/tren • '+(lab?list.length+' ide lab • ':'')+(data?.quality_control?.items_scanned ?? '?')+' diperiksa');
  setText('agent-data',data?.last_checked_at?new Date(data.last_checked_at).toLocaleString('id-ID'):'Belum diperiksa');
  setText('agent-next',data?.errors?.length?'Sebagian sumber bermasalah':list.length?'Baca laporan':'Menunggu hasil riset');
- setText('agent-help','Gerakan karakter hanya animasi. Hasil berasal dari Google Trends dan liputan publik, bukan statistik views TikTok.');
+ setText('agent-help','Karakter bergerak adalah animasi. Riset menggunakan Google Trends, berita publik, dan unggahan Reddit. Tidak ada metrik views TikTok.');
  var button=document.getElementById('open-results');if(button)button.textContent='▤ BUKA LAPORAN';
 }
 function render(){
@@ -70,4 +72,38 @@ var loading=document.createElement('p');loading.textContent='Memuat laporan rise
 var canvas=document.getElementById('office');
 if(canvas)canvas.addEventListener('click',()=>requestAnimationFrame(apply));
 load();
+var panel=document.getElementById('history-panel');
+if(!panel){
+ panel=document.createElement('section');
+ panel.id='history-panel';panel.className='feedback';
+ var results=document.getElementById('results');
+ if(results){results.append(panel);}
+}
+var buttonHistory=document.createElement('button');
+buttonHistory.className='pixel-btn secondary';buttonHistory.type='button';
+buttonHistory.textContent='▤ LIHAT RIWAYAT RISET';
+var historyBody=document.createElement('div');
+historyBody.hidden=true;
+panel.append(buttonHistory,historyBody);
+buttonHistory.onclick=async function(){
+ if(!historyBody.hidden){historyBody.hidden=true;buttonHistory.textContent='▤ LIHAT RIWAYAT RISET';return;}
+ historyBody.hidden=false;buttonHistory.textContent='✕ TUTUP RIWAYAT';
+ historyBody.textContent='Memuat riwayat...';
+ try{
+  var result=await fetch('./data/history.json?nocache='+Date.now(),{cache:'no-store'});
+  if(!result.ok)throw new Error('HTTP '+result.status);
+  var history=await result.json();
+  if(history.schema_version!==1||!Array.isArray(history.entries))throw new Error('Format riwayat tidak sesuai');
+  historyBody.replaceChildren();
+  var label=document.createElement('p');
+  label.textContent='Catatan harian Nova, maksimum 30 hari. Bukan statistik views TikTok.';
+  historyBody.append(label);
+  if(!history.entries.length){var empty=document.createElement('p');empty.textContent='Belum ada riwayat.';historyBody.append(empty);}
+  history.entries.slice(-7).reverse().forEach(function(entry){
+   var line=document.createElement('p');
+   line.textContent=(entry.date||'?')+' · '+(entry.items_scanned??0)+' sinyal diperiksa · '+(entry.community_examples??0)+' video komunitas · '+(entry.news_and_search_signals??0)+' sumber lain · status: '+(entry.status||'?');
+   historyBody.append(line);
+  });
+ }catch(e){historyBody.textContent='Riwayat belum tersedia. Coba lagi sesudah riset harian berikutnya.';}
+};
 })();

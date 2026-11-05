@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add office/data/latest.json office/data/seen.json
+          git add office/data/latest.json office/data/seen.json office/data/history.json
           if ! git diff --cached --quiet; then
             git commit -m 'data: update public trend signals'
             # Reconcile changes pushed while today's source scan was running.

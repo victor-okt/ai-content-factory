@@ -123,6 +123,7 @@ def run(fetcher=fetch, when=None, root="."):
     root = Path(root)
     latest_path = root / "office/data/latest.json"
     seen_path = root / "office/data/seen.json"
+    history_path = root / "office/data/history.json"
     try:
         previous = json.loads(latest_path.read_text("utf-8"))
     except (OSError, ValueError):
@@ -181,6 +182,27 @@ def run(fetcher=fetch, when=None, root="."):
     latest_path.parent.mkdir(parents=True, exist_ok=True)
     latest_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     seen_path.write_text(json.dumps(dict(list(seen.items())[-500:]), ensure_ascii=False, indent=2), encoding="utf-8")
+    # One compact, public daily summary per date (last 30 days only).
+    # Never invent success or include private API credentials in this file.
+    try:
+        saved_history = json.loads(history_path.read_text(encoding="utf-8"))
+        records = saved_history.get("entries", [])
+        if not isinstance(records, list):
+            records = []
+    except (OSError, ValueError, TypeError, AttributeError):
+        records = []
+    entry = {
+        "date": day, "checked_at": stamp, "status": status,
+        "items_scanned": payload["quality_control"]["items_scanned"],
+        "qualifying_examples": len(current),
+        "community_examples": sum(1 for item in current if item.get("source_type") == "community_post"),
+        "news_and_search_signals": sum(1 for item in current if item.get("source_type") != "community_post"),
+        "source_errors": len(errors)
+    }
+    records = [item for item in records if isinstance(item, dict) and item.get("date") != day and isinstance(item.get("date"), str)]
+    records.append(entry)
+    records = sorted(records, key=lambda item: item["date"])[-30:]
+    history_path.write_text(json.dumps({"schema_version": 1, "entries": records}, ensure_ascii=False, indent=2), encoding="utf-8")
     return payload
 
 if __name__ == "__main__":

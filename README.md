@@ -54,3 +54,10 @@ Tidak ada API key dalam repository. Website dan laporan riset bersifat **publik*
 - If collection fails, previous ideas are labeled stale. If no source qualifies, the report can be empty.
 - `quality_control` records how many feed items were examined and rejected.
 - `handoff` prepares IDs for future Agent 2, but does **not** execute it without approval.
+
+
+## Riwayat harian Nova
+
+`office/data/history.json` mencatat maksimal 30 tanggal terbaru (satu rangkuman per hari): jumlah sinyal yang diperiksa, contoh video komunitas, sinyal berita/pencarian, dan kegagalan sumber. Kantor pixel menampilkan tujuh tanggal terbaru melalui tombol **Lihat Riwayat Riset**. Semua ini merupakan *aktivitas riset*, bukan angka TikTok atau kinerja konten yang dipublikasi.
+
+Jika riset menemukan 0 sumber yang memenuhi syarat, Nova tetap dapat menampilkan tiga **ide laboratorium** berlabel jelas sebagai contoh editorial, bukan tren nyata. Pilihan ide disimpan hanya di browser pengguna; belum diteruskan secara otomatis ke Agent 2.
