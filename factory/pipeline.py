@@ -70,7 +70,7 @@ def safe_link(value):
         _ = parts.port
         # Backslashes, whitespace and controls can be interpreted differently
         # by browsers, proxies and downstream consumers.
-        if any(char.isspace() or ord(char) < 32 or char == "\\\\" for char in value):
+        if any(char.isspace() or ord(char) < 32 or char == chr(92) for char in value):
             return ""
     except ValueError:
         return ""
