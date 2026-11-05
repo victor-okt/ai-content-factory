@@ -19,12 +19,17 @@ from .quality import rejection, title_key, assess, ANGLES, laboratory_seeds
 
 WIB = timezone(timedelta(hours=7))
 TREND_URL = "https://trends.google.com/trending/rss?geo=ID"
+# Wider editorial discovery: the previous quoted combinations returned mostly
+# unrelated tutorials and zero qualifying story signals on 2026-11-05.
+# These searches remain public news signals, NOT verified TikTok trends.
 NEWS_QUERIES = (
-    '"miniature" "AI" "video"',
-    '"AI animation" "short film"',
-    '"stop motion" "toy" "viral"',
-    '"kartu" "animasi" "video"',
-    '"AI" "surreal" "animation"'
+    'miniature animation video',
+    'stop motion toy animation',
+    'animated short film fantasy',
+    'surreal animation video',
+    'figurine comes alive animation',
+    'animasi 3d kucing video pendek',
+    'kartu animasi video pendek'
 )
 BAD = re.compile(r"\b(meninggal|tewas|bunuh|pembunuhan|bencana|gempa|banjir|perang|korban|kecelakaan|tragedi|politik|pemilu|korupsi|suicide|death|war|disaster|crash|election|murder|abuse)\b", re.I)
 TOPIC = re.compile(r"\b(anime|animasi|animation|game|gaming|kartu|card|miniatur|miniature|toy|robot|gadget|kucing|cat|dog|food|makanan|viral|tiktok|ai video|video ai|creator|creative|cosplay|fantasy|meme|figure|kartun|video|3d)\b", re.I)
