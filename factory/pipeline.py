@@ -62,7 +62,15 @@ def safe_link(value):
         return ""
     try:
         parts = urlsplit(value)
-        if parts.scheme not in ("http", "https") or not parts.netloc or parts.username or parts.password:
+        if (parts.scheme not in ("http", "https") or not parts.netloc
+                or not parts.hostname or parts.username is not None
+                or parts.password is not None):
+            return ""
+        # Force port parsing: urlsplit accepts invalid and out-of-range ports.
+        _ = parts.port
+        # Backslashes, whitespace and controls can be interpreted differently
+        # by browsers, proxies and downstream consumers.
+        if any(char.isspace() or ord(char) < 32 or char == "\\\\" for char in value):
             return ""
     except ValueError:
         return ""
