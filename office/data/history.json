@@ -1,4 +1,15 @@
 {
   "schema_version": 1,
-  "entries": []
+  "entries": [
+    {
+      "date": "2026-11-06",
+      "checked_at": "2026-11-06T02:30:40+07:00",
+      "status": "ok",
+      "items_scanned": 89,
+      "qualifying_examples": 4,
+      "community_examples": 4,
+      "news_and_search_signals": 0,
+      "source_errors": 0
+    }
+  ]
 }
