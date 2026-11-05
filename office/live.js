@@ -1,6 +1,9 @@
 (function(){
 'use strict';
 var data=null;
+var choiceKey='acf-pixel-office-selected-idea';
+var selectedId='';
+try { selectedId=localStorage.getItem(choiceKey)||''; } catch(e) {}
 var ideas=document.getElementById('ideas');
 var status=document.getElementById('agent-status');
 function setText(id,value){var x=document.getElementById(id);if(x)x.textContent=String(value);}
@@ -37,7 +40,14 @@ function render(){
   var link=document.createElement('a');var url=String(item.source_url||'');
   if(/^https?:\/\//i.test(url)){link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='↗ LIHAT SUMBER';link.style.color='#a6efd5';}
   var choose=document.createElement('button');choose.className='pixel-btn secondary';choose.textContent='PILIH IDE';
-  choose.onclick=function(){ideas.querySelectorAll('.idea').forEach(function(el){el.classList.remove('chosen')});card.classList.add('chosen');setText('feedback','Ide dipilih pada tampilan ini saja. Belum dikirim ke Agent 2 atau tersimpan di server.');};
+  if(item.content_id===selectedId){card.classList.add('chosen');choose.textContent='✓ DIPILIH DI BROWSER';}
+  choose.onclick=function(){
+    selectedId=String(item.content_id||'');
+    try {localStorage.setItem(choiceKey,selectedId);} catch(e) {}
+    ideas.querySelectorAll('.idea').forEach(function(el){el.classList.remove('chosen');var b=el.querySelector('button');if(b)b.textContent='PILIH IDE';});
+    card.classList.add('chosen');choose.textContent='✓ DIPILIH DI BROWSER';
+    setText('feedback','Ide pilihan tersimpan di browser ini. Belum dikirim ke Agent 2 atau tersimpan di server.');
+  };
   var why=document.createElement('small');why.textContent=Array.isArray(item.why_recommended)?'Alasan: '+item.why_recommended.slice(0,2).join(' · '):'Sumber publik, tidak menjamin viral.';
   if(item.source_type==='editorial_seed')link.textContent='';
   card.append(score,title,concept,source,proof,why,link,choose);ideas.append(card);
