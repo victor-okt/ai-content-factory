@@ -2,7 +2,7 @@
   "schema_version": 1,
   "agent_version": "1.2",
   "status": "empty",
-  "last_checked_at": "2026-11-05T22:05:57+07:00",
+  "last_checked_at": "2026-11-05T22:08:28+07:00",
   "last_success_at": "2026-11-05T18:10:49+07:00",
   "feed_checks": [
     {
@@ -14,13 +14,13 @@
     {
       "source": "news",
       "url": "https://news.google.com/rss/search?q=miniature%20animation%20video&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 8,
+      "feed_items": 7,
       "accepted": 0
     },
     {
       "source": "news",
       "url": "https://news.google.com/rss/search?q=stop%20motion%20toy%20animation&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 7,
+      "feed_items": 6,
       "accepted": 0
     },
     {
@@ -56,13 +56,13 @@
   ],
   "errors": [],
   "quality_control": {
-    "items_scanned": 62,
+    "items_scanned": 60,
     "qualified_unique": 0,
     "rejected_by_reason": {
       "bukan_hiburan": 10,
       "lainnya": 7,
-      "tidak_spesifik_visual": 26,
-      "tutorial_atau_promosi": 19
+      "tidak_spesifik_visual": 25,
+      "tutorial_atau_promosi": 18
     }
   },
   "ideas": [],
