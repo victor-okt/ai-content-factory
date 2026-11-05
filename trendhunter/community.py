@@ -11,15 +11,16 @@ import xml.etree.ElementTree as ET
 from datetime import date, datetime, timezone
 from html import unescape
 
+# One focused source; avoid extra requests and Reddit rate limiting.
 FEEDS = (
     ("community", "https://www.reddit.com/r/aivideos/new/.rss"),
-    ("community", "https://www.reddit.com/r/aivideo/new/.rss"),
 )
 ATOM = "{http://www.w3.org/2005/Atom}"
 EXCLUDE = re.compile(
     r"\b(how do|how to|tutorial|help|looking for|which ai|which tool|"
     r"question|pricing|price|free ai|please help|need help|"
     r"feedback|giveaway|discount|prompt|prompts|course|kursus|"
+    r"subscription|plan|got myself|" 
     r"cara membuat|software|app review|subscription)\b", re.I
 )
 UNSAFE = re.compile(
@@ -53,6 +54,8 @@ def community_idea(item, day):
     title = re.sub(r"\s+", " ", item.get("title", "")).strip()[:160]
     link = item.get("link", "")
     if not title or not link.startswith("https://www.reddit.com/r/"):
+        return None
+    if len(title) < 12 or len(title.split()) < 2:
         return None
     if EXCLUDE.search(title) or UNSAFE.search(title) or not item.get("has_video"):
         return None
