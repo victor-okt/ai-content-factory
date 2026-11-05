@@ -1,92 +1,63 @@
 {
   "schema_version": 1,
-  "status": "ok",
-  "last_checked_at": "2026-11-05T18:10:49+07:00",
+  "agent_version": "1.2",
+  "status": "empty",
+  "last_checked_at": "2026-11-05T18:32:14+07:00",
   "last_success_at": "2026-11-05T18:10:49+07:00",
   "feed_checks": [
     {
       "source": "trends",
       "url": "https://trends.google.com/trending/rss?geo=ID",
-      "feed_items": 10
+      "feed_items": 10,
+      "accepted": 0
     },
     {
       "source": "news",
-      "url": "https://news.google.com/rss/search?q=TikTok%20AI%20animation%20viral&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 9
+      "url": "https://news.google.com/rss/search?q=%22miniature%22%20%22AI%22%20%22video%22&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 10,
+      "accepted": 0
     },
     {
       "source": "news",
-      "url": "https://news.google.com/rss/search?q=video%20AI%20kreatif%20viral&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 31
+      "url": "https://news.google.com/rss/search?q=%22AI%20animation%22%20%22short%20film%22&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 0,
+      "accepted": 0
     },
     {
       "source": "news",
-      "url": "https://news.google.com/rss/search?q=AI%20video%20trend%20creative&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 24
+      "url": "https://news.google.com/rss/search?q=%22stop%20motion%22%20%22toy%22%20%22viral%22&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 6,
+      "accepted": 0
+    },
+    {
+      "source": "news",
+      "url": "https://news.google.com/rss/search?q=%22kartu%22%20%22animasi%22%20%22video%22&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 20,
+      "accepted": 0
+    },
+    {
+      "source": "news",
+      "url": "https://news.google.com/rss/search?q=%22AI%22%20%22surreal%22%20%22animation%22&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 0,
+      "accepted": 0
     }
   ],
   "errors": [],
-  "ideas": [
-    {
-      "content_id": "TH-420508B43D0F",
-      "title": "Instagram Trending 80s Look Photo Prompt | Viral 80s Look Ai Photo Prompt Winter Storm Warning (WVSvpFfd2Q) - Unisba Media",
-      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1IRWhWTnNfYnExVUxwZnlsZzZfVXdxN3ZVMWdJUXFHdDJwdE0wd3JJRmZkOE1pcUFXdVA1NlM2MlR3X3hpN0ZfY2NsY0prRGFRR21LQld2NW1BUWttNG9fdnl6ZjVwZw?oc=5",
-      "observed_at": "2026-11-03",
-      "category": "visual_transformation",
-      "concept": "Sinyal: Instagram Trending 80s Look Photo Prompt | Viral 80s Look Ai Photo Prompt Winter Storm Warning (WVSvpFfd2Q) - Unisba Media. Gunakan satu perubahan visual dramatis dengan reveal singkat.",
-      "score": 78.0,
-      "signal_source": "Google News / liputan publik",
-      "evidence_label": "Liputan publik, bukan bukti video viral TikTok.",
-      "metrics_verified": false,
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-05",
-      "seen_before": false
-    },
-    {
-      "content_id": "TH-229959F015A5",
-      "title": "Jellysmack: Ubah Satu Video Panjang Menjadi 50 Video Pendek Viral – AI + Editor dalam Hitungan Menit - quasa.io",
-      "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQYTJxYUZ1ZWJvRUFEYUkxV0RCZ2tfaExsN2JMZ3B1Q0JnNmw2NE5ZVVhQUkxHb0xhY2RrM3czTWFabzczZzA1Y2ZISDdva19oWTFOdmRFYS1VZGExVmo1bXN6Y21IZVAyYWg4U3g0UEpvOUMxZ2UwTHJTYm10X0tmOVU0cjY2WFIwWXQ5MHlzS2RTcFh3SjR6aW5VMEk4WjBxMHlybXZkRVk1UjQ2Zml1UmhBVHZpRHpGUDZJcTNR?oc=5",
-      "observed_at": "2026-11-03",
-      "category": "visual_transformation",
-      "concept": "Sinyal: Jellysmack: Ubah Satu Video Panjang Menjadi 50 Video Pendek Viral – AI + Editor dalam Hitungan Menit - quasa.io. Gunakan satu perubahan visual dramatis dengan reveal singkat.",
-      "score": 78.0,
-      "signal_source": "Google News / liputan publik",
-      "evidence_label": "Liputan publik, bukan bukti video viral TikTok.",
-      "metrics_verified": false,
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-05",
-      "seen_before": false
-    },
-    {
-      "content_id": "TH-7E9881FB83BA",
-      "title": "Outtake: Ulasan — Ubah Video Panjang Menjadi Video Pendek Viral dalam Hitungan Menit - quasa.io",
-      "source_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOekFUQ01GNXJwdXVIaDdjdnJUMHZ1S2tGbF8zNzc2aGZybHlRTEJWeFFXd096dkp6dFBoNVU1RlBqZzI0Nm40RzROdWYtdG5tXzM5UTRQc2JXMExNTW16S0s2RmE4TEJkNFk4eHBfYWRTZ0NiczNhZW1UWUtPTFpNTzlia0VIQ1JyN2g0cS13aUMtbnBOTTVSc09jOXFuOHNQRmNabE1xN25oQm8?oc=5",
-      "observed_at": "2026-11-05",
-      "category": "visual_transformation",
-      "concept": "Sinyal: Outtake: Ulasan — Ubah Video Panjang Menjadi Video Pendek Viral dalam Hitungan Menit - quasa.io. Gunakan satu perubahan visual dramatis dengan reveal singkat.",
-      "score": 78.0,
-      "signal_source": "Google News / liputan publik",
-      "evidence_label": "Liputan publik, bukan bukti video viral TikTok.",
-      "metrics_verified": false,
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-05",
-      "seen_before": false
-    },
-    {
-      "content_id": "TH-E1232C5B701E",
-      "title": "Teknologi AI Lokal Bidik Industri Kreatif, dari Pengembangan Ide hingga Produksi Video - Suara.com",
-      "source_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOWEowd1dPM0Q0eUkxMDRnQTFWRTZMWTdpelhwbDBsN2d3cjcyczI1VkZsb0xBOEN3dU1WSC1OelNEZUxBeW1RRzhDdWVKVEdqZ2FueGxEY2JZTHF3aUV2dHR1QjNDbTZHRFBwYlU1cmQzd1JDUVhEWnZGSDNUanphOV9ubTZMSWFVbjRJWVRMSG5SUlllME9Qa2hDUTVlQXlzUlFLX004LXZwMnhzODVvbmxLR0F5VjFzT1JiV2Roel9rcnlzeXphbVlyZ9IBywFBVV95cUxQUkhRRl9xWlBDUFlfU3UtMFFLVjBSRHk1UWo3cWRJTEszcUF6NU9hQXNsT0JRVDhyVW9rWWppZkstbWxFcGV3SUFEMHI4Z3RRcUk0QWlRVy1IRzA1Mm5lVnplTFFMdk5iYlRtczhuMVZQSGhTamNQN3BOWVo5TGRnV2pva25EVlJwc0dBb1VLOFd2UTRIUGlDbERIbFhDWVVIZ2ZSbTlsTGdmOEo1WE5fbnN2QXlZTnk1NnpTSkpaeVJRQlBfd3BPVDl5MA?oc=5",
-      "observed_at": "2026-10-29",
-      "category": "visual_transformation",
-      "concept": "Sinyal: Teknologi AI Lokal Bidik Industri Kreatif, dari Pengembangan Ide hingga Produksi Video - Suara.com. Gunakan satu perubahan visual dramatis dengan reveal singkat.",
-      "score": 78.0,
-      "signal_source": "Google News / liputan publik",
-      "evidence_label": "Liputan publik, bukan bukti video viral TikTok.",
-      "metrics_verified": false,
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-05",
-      "seen_before": false
+  "quality_control": {
+    "items_scanned": 46,
+    "qualified_unique": 0,
+    "rejected_by_reason": {
+      "bukan_hiburan": 10,
+      "lainnya": 4,
+      "tidak_spesifik_visual": 18,
+      "tutorial_atau_promosi": 14
     }
-  ],
-  "disclaimer": "Sinyal Google Trends dan News, bukan statistik views atau viral TikTok. Skor adalah heuristik, bukan prediksi."
+  },
+  "ideas": [],
+  "handoff": {
+    "next_agent": "creative_director",
+    "approval": "pending",
+    "top_candidate_ids": []
+  },
+  "disclaimer": "Sinyal Google Trends/News publik, bukan analytics TikTok. Skor adalah kecocokan kreatif, bukan peluang viral atau penghasilan."
 }
