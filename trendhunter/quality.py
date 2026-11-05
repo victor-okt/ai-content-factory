@@ -31,3 +31,26 @@ def assess(title,group,kind,age):
  evidence=9 if kind=="trends" else 7
  breakdown={"relevance":relevance,"visual_hook":hook,"freshness":freshness,"source":evidence}
  return sum(breakdown.values()),breakdown
+
+
+def laboratory_seeds():
+    """Editorial experiments only: not discovered trends and not sourced claims."""
+    templates=[
+        ("LAB-CARD-01","Kartu monster orisinal menjadi hidup",
+         "Sebuah kartu koleksi bergetar; karakter original keluar dari kartu dan melompat menembus kamera.", "object_comes_alive"),
+        ("LAB-MINI-02","Meja kerja berubah menjadi kota mini",
+         "Sebuah pulpen jatuh; seluruh meja menjadi kota mini dengan jalan dan kendaraan mungil.", "miniature_world"),
+        ("LAB-PET-03","Kucing mengendalikan robot kecil",
+         "Seekor kucing menyentuh mainan; robot kecil tersadar lalu beraksi lucu dalam 12 detik.", "surreal_comedy")
+    ]
+    return [
+      {"content_id":uid,"title":title,"concept":concept,"score":None,
+       "source_type":"editorial_seed","signal_source":"Laboratorium Ide • bukan data tren",
+       "evidence_label":"Ide kreatif internal, belum ada bukti tren atau views",
+       "observed_at":None,"source_url":"","metrics_verified":False,"approval_status":"menunggu_persetujuan",
+       "category":group,"why_recommended":["Visual mudah dimengerti tanpa dialog","Bisa diuji dalam 8–15 detik"],
+       "creative_brief":{"idea_id":uid,"ratio":"9:16","duration_seconds":12,
+                         "hook":"Tampilkan perubahan visual pada 2 detik pertama",
+                         "creative_angle":concept,"source_url":""}}
+      for uid,title,concept,group in templates
+    ]

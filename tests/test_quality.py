@@ -1,6 +1,6 @@
 import unittest
 from trendhunter.daily import idea_from
-from trendhunter.quality import rejection, title_key
+from trendhunter.quality import rejection, title_key, laboratory_seeds
 
 class QualityGateTests(unittest.TestCase):
     def test_spam_rejected(self):
@@ -19,6 +19,10 @@ class QualityGateTests(unittest.TestCase):
         self.assertIsNone(idea_from({"title":"Harga minyak","link":"https://example.com"},"trends","2026-11-05"))
     def test_stable_id_across_publishers(self):
         self.assertEqual(title_key("Toy figure comes alive - Site X","object_comes_alive"),title_key("Toy figure comes alive - Site Y","object_comes_alive"))
+    def test_lab_seeds_are_not_misrepresented_as_trends(self):
+        seeds=laboratory_seeds()
+        self.assertEqual(len(seeds),3)
+        self.assertTrue(all(x["source_type"]=="editorial_seed" and not x["source_url"] and not x["metrics_verified"] for x in seeds))
     def test_sensitive_topic_rejected(self):
         self.assertIsNone(idea_from({"title":"Kecelakaan video anime viral","link":"https://example.com"},"news","2026-11-05"))
 if __name__=="__main__": unittest.main()

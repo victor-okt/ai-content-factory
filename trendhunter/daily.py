@@ -15,7 +15,7 @@ from email.utils import parsedate_to_datetime
 from html import unescape
 from pathlib import Path
 from collections import Counter
-from .quality import rejection, title_key, assess, ANGLES
+from .quality import rejection, title_key, assess, ANGLES, laboratory_seeds
 
 WIB = timezone(timedelta(hours=7))
 TREND_URL = "https://trends.google.com/trending/rss?geo=ID"
@@ -165,8 +165,11 @@ def run(fetcher=fetch, when=None, root="."):
         "quality_control": {"items_scanned": sum(x["feed_items"] for x in checks),
                             "qualified_unique": len(current), "rejected_by_reason": dict(sorted(rejected.items()))},
         "ideas": current[:12] if current else (previous_ideas if errors else []),
+        "creative_seeds": laboratory_seeds() if not current and not previous_ideas else [],
         "handoff": {"next_agent": "creative_director", "approval": "pending",
-                    "top_candidate_ids": [i["content_id"] for i in current[:3]]},
+                    "top_candidate_ids": [i["content_id"] for i in current[:3]],
+                    "lab_candidate_ids": [i["content_id"] for i in laboratory_seeds()] if not current else [],
+                    "note": "Agent 2 belum dijalankan, perlu persetujuan pengguna."},
         "disclaimer": "Sinyal Google Trends/News publik, bukan analytics TikTok. Skor adalah kecocokan kreatif, bukan peluang viral atau penghasilan."
     }
     latest_path.parent.mkdir(parents=True, exist_ok=True)
