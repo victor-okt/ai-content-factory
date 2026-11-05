@@ -2,8 +2,8 @@
   "schema_version": 1,
   "agent_version": "1.3",
   "status": "ok",
-  "last_checked_at": "2026-11-06T02:33:25+07:00",
-  "last_success_at": "2026-11-06T02:33:25+07:00",
+  "last_checked_at": "2026-11-06T02:34:30+07:00",
+  "last_success_at": "2026-11-06T02:34:30+07:00",
   "feed_checks": [
     {
       "source": "trends",
@@ -26,7 +26,7 @@
     {
       "source": "news",
       "url": "https://news.google.com/rss/search?q=animated%20short%20film%20fantasy&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 7,
+      "feed_items": 8,
       "accepted": 0
     },
     {
@@ -44,7 +44,7 @@
     {
       "source": "news",
       "url": "https://news.google.com/rss/search?q=animasi%203d%20kucing%20video%20pendek&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 10,
+      "feed_items": 9,
       "accepted": 0
     },
     {
@@ -68,8 +68,8 @@
       "bukan_hiburan": 10,
       "komunitas_tidak_lolos": 24,
       "lainnya": 7,
-      "tidak_spesifik_visual": 25,
-      "tutorial_atau_promosi": 20
+      "tidak_spesifik_visual": 26,
+      "tutorial_atau_promosi": 19
     }
   },
   "ideas": [
