@@ -7,19 +7,14 @@ on:
       - 'trendhunter/**'
   workflow_dispatch:
   schedule:
-    - cron: '23 0 * * *'
+    - cron: '23 0 * * *' # sekitar 07:23 WIB; best-effort, not exact
 permissions:
   contents: write
-  pages: write
-  id-token: write
 concurrency:
-  group: pixel-office
+  group: trend-hunter-research
   cancel-in-progress: false
 jobs:
   research:
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -27,28 +22,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run tests
+      - name: Validate Agent 1
         run: python -m unittest discover -s tests -v
       - name: Collect public signals
         run: python -m trendhunter.daily
-      - name: Commit daily data
+      - name: Save daily report and 30-day history
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add office/data/latest.json office/data/seen.json office/data/history.json
           if ! git diff --cached --quiet; then
             git commit -m 'data: update public trend signals'
-            # Reconcile changes pushed while today's source scan was running.
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
           fi
-      - name: Prepare GitHub Pages
-        uses: actions/configure-pages@v5
-      - name: Upload Pixel Office
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./office
-      - name: Publish latest Trend Hunter report
-        id: deploy
-        uses: actions/deploy-pages@v4
+# Note: Publishing is handled ONLY by deploy-pages.yml after the office/data
+# commit. This prevents competing GitHub Pages deployments.
