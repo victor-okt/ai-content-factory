@@ -14,10 +14,18 @@ from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from html import unescape
 from pathlib import Path
+from collections import Counter
+from .quality import rejection, title_key, assess, ANGLES
 
 WIB = timezone(timedelta(hours=7))
 TREND_URL = "https://trends.google.com/trending/rss?geo=ID"
-NEWS_QUERIES = ("TikTok AI animation viral", "video AI kreatif viral", "AI video trend creative")
+NEWS_QUERIES = (
+    '"miniature" "AI" "video"',
+    '"AI animation" "short film"',
+    '"stop motion" "toy" "viral"',
+    '"kartu" "animasi" "video"',
+    '"AI" "surreal" "animation"'
+)
 BAD = re.compile(r"\b(meninggal|tewas|bunuh|pembunuhan|bencana|gempa|banjir|perang|korban|kecelakaan|tragedi|politik|pemilu|korupsi|suicide|death|war|disaster|crash|election|murder|abuse)\b", re.I)
 TOPIC = re.compile(r"\b(anime|animasi|animation|game|gaming|kartu|card|miniatur|miniature|toy|robot|gadget|kucing|cat|dog|food|makanan|viral|tiktok|ai video|video ai|creator|creative|cosplay|fantasy|meme|figure|kartun|video|3d)\b", re.I)
 
@@ -74,9 +82,11 @@ def idea_from(item, kind, day):
     url = item.get("link", "")
     if not title or not url.startswith(("https://", "http://")) or BAD.search(title) or not TOPIC.search(title):
         return None
+    if rejection(title, kind):
+        return None
     published = date_of(item.get("pubDate"), day)
     age = (datetime.fromisoformat(day).date() - datetime.fromisoformat(published).date()).days
-    if age < 0 or age > 14:
+    if age < 0 or age > 10:
         return None
     group = category(title)
     angles = {
@@ -85,13 +95,18 @@ def idea_from(item, kind, day):
         "surreal_comedy": "Buat perubahan absurd dan lucu dengan twist di akhir.",
         "visual_transformation": "Gunakan satu perubahan visual dramatis dengan reveal singkat."
     }
-    identity = title.lower().strip() + "|" + url.split("?")[0]
-    uid = "TH-" + hashlib.sha256(identity.encode()).hexdigest()[:12].upper()
-    score = round(((5 if group != "visual_transformation" else 4) * 30 + (3 if group == "miniature_world" else 4) * 30 + 3 * 15 + (5 if age <= 7 else 4) * 15 + 3 * 10) / 5, 1)
+    uid = title_key(title, group)
+    score, breakdown = assess(title, group, kind, age)
     return {
         "content_id": uid, "title": title, "source_url": url, "observed_at": published,
-        "category": group, "concept": "Sinyal: " + title + ". " + angles[group],
-        "score": score, "signal_source": "Google Trends Indonesia" if kind == "trends" else "Google News / liputan publik",
+        "category": group, "concept": "Inspirasi dari sinyal publik: " + title + ". " + ANGLES[group],
+        "score": score, "score_label": "Kecocokan konsep, bukan prediksi viral",
+        "score_breakdown": breakdown,
+        "confidence": "rendah" if kind == "news" else "rendah-menengah",
+        "why_recommended": ["Topik sesuai format hiburan visual", "Bisa dibuat sebagai video pendek", "Bukan data analytics TikTok"],
+        "approval_status": "menunggu_persetujuan",
+        "creative_brief": {"idea_id": uid, "duration_seconds": 12, "ratio": "9:16", "angle": ANGLES[group], "source_url": url},
+        "signal_source": "Google Trends Indonesia" if kind == "trends" else "Google News / liputan publik",
         "evidence_label": "Pencarian Google, bukan statistik video TikTok." if kind == "trends" else "Liputan publik, bukan bukti video viral TikTok.",
         "metrics_verified": False, "next_agent": "creative_director"
     }
@@ -116,15 +131,19 @@ def run(fetcher=fetch, when=None, root="."):
         ("news", "https://news.google.com/rss/search?q=" + urllib.parse.quote(q) + "&hl=id&gl=ID&ceid=ID:id")
         for q in NEWS_QUERIES
     ]
-    results, errors, checks = [], [], []
+    results, errors, checks, rejected = [], [], [], Counter()
     for kind, url in sources:
         try:
             items = rss_items(fetcher(url))
-            checks.append({"source": kind, "url": url, "feed_items": len(items)})
+            accepted = 0
             for item in items:
                 candidate = idea_from(item, kind, day)
                 if candidate:
                     results.append(candidate)
+                    accepted += 1
+                else:
+                    rejected[rejection(item.get("title",""),kind) or "lainnya"] += 1
+            checks.append({"source": kind, "url": url, "feed_items": len(items), "accepted": accepted})
         except (OSError, ValueError, ET.ParseError, TimeoutError) as exc:
             errors.append(kind + ": " + type(exc).__name__ + " " + str(exc)[:120])
     unique = {row["content_id"]: row for row in results}
@@ -136,12 +155,19 @@ def run(fetcher=fetch, when=None, root="."):
     current.sort(key=lambda item: (-item["score"], item["seen_before"], item["title"]))
     stamp = clock.isoformat(timespec="seconds")
     status = ("partial" if errors else "ok") if current else ("error" if errors else "empty")
+    previous_ideas = previous.get("ideas", []) if isinstance(previous.get("ideas"), list) else []
+    if not current and errors and previous_ideas:
+        status = "stale"
     payload = {
-        "schema_version": 1, "status": status, "last_checked_at": stamp,
+        "schema_version": 1, "agent_version": "1.2", "status": status, "last_checked_at": stamp,
         "last_success_at": stamp if current else previous.get("last_success_at"),
         "feed_checks": checks, "errors": errors,
-        "ideas": current[:20] if current else (previous.get("ideas", []) if errors else []),
-        "disclaimer": "Sinyal Google Trends dan News, bukan statistik views atau viral TikTok. Skor adalah heuristik, bukan prediksi."
+        "quality_control": {"items_scanned": sum(x["feed_items"] for x in checks),
+                            "qualified_unique": len(current), "rejected_by_reason": dict(sorted(rejected.items()))},
+        "ideas": current[:12] if current else (previous_ideas if errors else []),
+        "handoff": {"next_agent": "creative_director", "approval": "pending",
+                    "top_candidate_ids": [i["content_id"] for i in current[:3]]},
+        "disclaimer": "Sinyal Google Trends/News publik, bukan analytics TikTok. Skor adalah kecocokan kreatif, bukan peluang viral atau penghasilan."
     }
     latest_path.parent.mkdir(parents=True, exist_ok=True)
     latest_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -151,5 +177,5 @@ def run(fetcher=fetch, when=None, root="."):
 if __name__ == "__main__":
     outcome = run()
     print(json.dumps({"status": outcome["status"], "ideas": len(outcome["ideas"]), "errors": outcome["errors"], "last_checked_at": outcome["last_checked_at"]}, ensure_ascii=False))
-    if outcome["status"] == "error" and not outcome.get("last_success_at"):
+    if outcome["status"] in ("error","stale") and not outcome.get("last_success_at"):
         sys.exit(1)

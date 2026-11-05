@@ -45,3 +45,12 @@ Hasil web mengikuti data di `office/data/latest.json`. Jika koneksi sumber gagal
 ## Keamanan dan biaya
 
 Tidak ada API key dalam repository. Website dan laporan riset bersifat **publik**. Jangan menaruh password, token, data pelanggan, atau informasi privat di repo. GitHub Pages dan Actions bisa digunakan dalam batas layanan gratis untuk proyek publik.
+
+
+## Agent 1 quality filter v1.2
+- News items must name a specific entertainment subject AND visual motion; tutorials, prompts and promotional tool articles are excluded.
+- Google Trends search terms must match entertainment niches. Source links and dates remain attached to each candidate.
+- Scores are heuristic creative-fit points, never verified viral probability.
+- If collection fails, previous ideas are labeled stale. If no source qualifies, the report can be empty.
+- `quality_control` records how many feed items were examined and rejected.
+- `handoff` prepares IDs for future Agent 2, but does **not** execute it without approval.
