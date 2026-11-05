@@ -2,8 +2,8 @@
   "schema_version": 1,
   "agent_version": "1.3",
   "status": "ok",
-  "last_checked_at": "2026-11-06T02:30:40+07:00",
-  "last_success_at": "2026-11-06T02:30:40+07:00",
+  "last_checked_at": "2026-11-06T02:32:39+07:00",
+  "last_success_at": "2026-11-06T02:32:39+07:00",
   "feed_checks": [
     {
       "source": "trends",
@@ -57,16 +57,16 @@
       "source": "community",
       "url": "https://www.reddit.com/r/aivideos/new/.rss",
       "feed_items": 25,
-      "accepted": 4
+      "accepted": 1
     }
   ],
   "errors": [],
   "quality_control": {
     "items_scanned": 89,
-    "qualified_unique": 4,
+    "qualified_unique": 1,
     "rejected_by_reason": {
       "bukan_hiburan": 10,
-      "komunitas_tidak_lolos": 21,
+      "komunitas_tidak_lolos": 24,
       "lainnya": 7,
       "tidak_spesifik_visual": 27,
       "tutorial_atau_promosi": 20
@@ -74,50 +74,12 @@
   },
   "ideas": [
     {
-      "content_id": "COMM-1XOMUE2",
-      "title": "🔥 THIS IS NOT AN ORDINARY FIREWORK. MEET GT-1976, A 1,500 KG MONSTER! 🤯🎆 Imagine launching a firework shell weighing 1.5 TONNES into the night sky!",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xomue2/this_is_not_an_ordinary_firework_meet_gt1976_a/",
-      "observed_at": "2026-11-05",
-      "category": "object_comes_alive",
-      "concept": "Contoh unggahan video komunitas: 🔥 THIS IS NOT AN ORDINARY FIREWORK. MEET GT-1976, A 1,500 KG MONSTER! 🤯🎆 Imagine launching a firework shell weighing 1.5 TONNES into the night sky!. Inspirasi orisinal: Buat karakter orisinal keluar dari objek, lalu bergerak di dunia nyata.",
-      "score": 79,
-      "score_label": "Kecocokan konsep, bukan tingkat viral",
-      "score_breakdown": {
-        "relevance": 79,
-        "visual_hook": 0,
-        "freshness": 0,
-        "source": 0
-      },
-      "confidence": "rendah",
-      "why_recommended": [
-        "Ada tautan unggahan video di komunitas AI video",
-        "Judul sesuai inspirasi hiburan visual",
-        "Tidak ada metrik views TikTok terverifikasi"
-      ],
-      "source_type": "community_post",
-      "signal_source": "Komunitas AI Video Reddit",
-      "evidence_label": "Posting komunitas; bukan bukti viral atau statistik TikTok",
-      "metrics_verified": false,
-      "approval_status": "menunggu_persetujuan",
-      "creative_brief": {
-        "idea_id": "COMM-1XOMUE2",
-        "duration_seconds": 12,
-        "ratio": "9:16",
-        "angle": "Buat karakter orisinal keluar dari objek, lalu bergerak di dunia nyata.",
-        "source_url": "https://www.reddit.com/r/aivideos/comments/1xomue2/this_is_not_an_ordinary_firework_meet_gt1976_a/",
-        "guidance": "Buat karya orisinal; jangan menyalin footage atau desain milik pembuat asal."
-      },
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-06",
-      "seen_before": false
-    },
-    {
-      "content_id": "COMM-1XONWKB",
-      "title": "I have finally created my first short film with Minimax.",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xonwkb/i_have_finally_created_my_first_short_film_with/",
+      "content_id": "COMM-1XONH9L",
+      "title": "THE LAST VIKING: THE IMMORTAL WHO LIVES BENEATH THE CLIFFS. Deep in the forgotten wilderness of Scandinavia, beyond the last inhabited village, lies a freezing ",
+      "source_url": "https://www.reddit.com/r/aivideos/comments/1xonh9l/the_last_viking_the_immortal_who_lives_beneath/",
       "observed_at": "2026-11-05",
       "category": "visual_transformation",
-      "concept": "Contoh unggahan video komunitas: I have finally created my first short film with Minimax.. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
+      "concept": "Contoh unggahan video komunitas: THE LAST VIKING: THE IMMORTAL WHO LIVES BENEATH THE CLIFFS. Deep in the forgotten wilderness of Scandinavia, beyond the last inhabited village, lies a freezing . Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
       "score": 73,
       "score_label": "Kecocokan konsep, bukan tingkat viral",
       "score_breakdown": {
@@ -138,87 +100,11 @@
       "metrics_verified": false,
       "approval_status": "menunggu_persetujuan",
       "creative_brief": {
-        "idea_id": "COMM-1XONWKB",
+        "idea_id": "COMM-1XONH9L",
         "duration_seconds": 12,
         "ratio": "9:16",
         "angle": "Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-        "source_url": "https://www.reddit.com/r/aivideos/comments/1xonwkb/i_have_finally_created_my_first_short_film_with/",
-        "guidance": "Buat karya orisinal; jangan menyalin footage atau desain milik pembuat asal."
-      },
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-06",
-      "seen_before": false
-    },
-    {
-      "content_id": "COMM-1XOODT7",
-      "title": "Maximum Perception | Cult Classic Remake | Trailer",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xoodt7/maximum_perception_cult_classic_remake_trailer/",
-      "observed_at": "2026-11-05",
-      "category": "visual_transformation",
-      "concept": "Contoh unggahan video komunitas: Maximum Perception | Cult Classic Remake | Trailer. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-      "score": 73,
-      "score_label": "Kecocokan konsep, bukan tingkat viral",
-      "score_breakdown": {
-        "relevance": 73,
-        "visual_hook": 0,
-        "freshness": 0,
-        "source": 0
-      },
-      "confidence": "rendah",
-      "why_recommended": [
-        "Ada tautan unggahan video di komunitas AI video",
-        "Judul sesuai inspirasi hiburan visual",
-        "Tidak ada metrik views TikTok terverifikasi"
-      ],
-      "source_type": "community_post",
-      "signal_source": "Komunitas AI Video Reddit",
-      "evidence_label": "Posting komunitas; bukan bukti viral atau statistik TikTok",
-      "metrics_verified": false,
-      "approval_status": "menunggu_persetujuan",
-      "creative_brief": {
-        "idea_id": "COMM-1XOODT7",
-        "duration_seconds": 12,
-        "ratio": "9:16",
-        "angle": "Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-        "source_url": "https://www.reddit.com/r/aivideos/comments/1xoodt7/maximum_perception_cult_classic_remake_trailer/",
-        "guidance": "Buat karya orisinal; jangan menyalin footage atau desain milik pembuat asal."
-      },
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-06",
-      "seen_before": false
-    },
-    {
-      "content_id": "COMM-1XOR3D3",
-      "title": "Side by Side Trailer",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xor3d3/side_by_side_trailer/",
-      "observed_at": "2026-11-05",
-      "category": "visual_transformation",
-      "concept": "Contoh unggahan video komunitas: Side by Side Trailer. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-      "score": 73,
-      "score_label": "Kecocokan konsep, bukan tingkat viral",
-      "score_breakdown": {
-        "relevance": 73,
-        "visual_hook": 0,
-        "freshness": 0,
-        "source": 0
-      },
-      "confidence": "rendah",
-      "why_recommended": [
-        "Ada tautan unggahan video di komunitas AI video",
-        "Judul sesuai inspirasi hiburan visual",
-        "Tidak ada metrik views TikTok terverifikasi"
-      ],
-      "source_type": "community_post",
-      "signal_source": "Komunitas AI Video Reddit",
-      "evidence_label": "Posting komunitas; bukan bukti viral atau statistik TikTok",
-      "metrics_verified": false,
-      "approval_status": "menunggu_persetujuan",
-      "creative_brief": {
-        "idea_id": "COMM-1XOR3D3",
-        "duration_seconds": 12,
-        "ratio": "9:16",
-        "angle": "Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-        "source_url": "https://www.reddit.com/r/aivideos/comments/1xor3d3/side_by_side_trailer/",
+        "source_url": "https://www.reddit.com/r/aivideos/comments/1xonh9l/the_last_viking_the_immortal_who_lives_beneath/",
         "guidance": "Buat karya orisinal; jangan menyalin footage atau desain milik pembuat asal."
       },
       "next_agent": "creative_director",
@@ -231,9 +117,7 @@
     "next_agent": "creative_director",
     "approval": "pending",
     "top_candidate_ids": [
-      "COMM-1XOMUE2",
-      "COMM-1XONWKB",
-      "COMM-1XOODT7"
+      "COMM-1XONH9L"
     ],
     "lab_candidate_ids": [],
     "note": "Agent 2 belum dijalankan, perlu persetujuan pengguna."
