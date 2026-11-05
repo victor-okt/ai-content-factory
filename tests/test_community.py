@@ -22,7 +22,7 @@ class CommunityFeedTests(unittest.TestCase):
         self.assertEqual(idea["content_id"],"COMM-ABC123")
         self.assertFalse(idea["metrics_verified"])
         self.assertEqual(idea["approval_status"],"menunggu_persetujuan")
-        self.assertIn("Bukan",idea["evidence_label"].capitalize())
+        self.assertIn("bukan", idea["evidence_label"].lower())
     def test_no_video_does_not_qualify(self):
         item=atom_items(feed(media="https://example.com/image.jpg"))[0]
         self.assertFalse(item["has_video"])
