@@ -2,7 +2,7 @@
   "schema_version": 1,
   "agent_version": "1.2",
   "status": "empty",
-  "last_checked_at": "2026-11-05T18:36:23+07:00",
+  "last_checked_at": "2026-11-05T22:05:57+07:00",
   "last_success_at": "2026-11-05T18:10:49+07:00",
   "feed_checks": [
     {
@@ -13,44 +13,56 @@
     },
     {
       "source": "news",
-      "url": "https://news.google.com/rss/search?q=%22miniature%22%20%22AI%22%20%22video%22&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 10,
+      "url": "https://news.google.com/rss/search?q=miniature%20animation%20video&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 8,
       "accepted": 0
     },
     {
       "source": "news",
-      "url": "https://news.google.com/rss/search?q=%22AI%20animation%22%20%22short%20film%22&hl=id&gl=ID&ceid=ID:id",
+      "url": "https://news.google.com/rss/search?q=stop%20motion%20toy%20animation&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 7,
+      "accepted": 0
+    },
+    {
+      "source": "news",
+      "url": "https://news.google.com/rss/search?q=animated%20short%20film%20fantasy&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 8,
+      "accepted": 0
+    },
+    {
+      "source": "news",
+      "url": "https://news.google.com/rss/search?q=surreal%20animation%20video&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 1,
+      "accepted": 0
+    },
+    {
+      "source": "news",
+      "url": "https://news.google.com/rss/search?q=figurine%20comes%20alive%20animation&hl=id&gl=ID&ceid=ID:id",
       "feed_items": 0,
       "accepted": 0
     },
     {
       "source": "news",
-      "url": "https://news.google.com/rss/search?q=%22stop%20motion%22%20%22toy%22%20%22viral%22&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 6,
+      "url": "https://news.google.com/rss/search?q=animasi%203d%20kucing%20video%20pendek&hl=id&gl=ID&ceid=ID:id",
+      "feed_items": 8,
       "accepted": 0
     },
     {
       "source": "news",
-      "url": "https://news.google.com/rss/search?q=%22kartu%22%20%22animasi%22%20%22video%22&hl=id&gl=ID&ceid=ID:id",
+      "url": "https://news.google.com/rss/search?q=kartu%20animasi%20video%20pendek&hl=id&gl=ID&ceid=ID:id",
       "feed_items": 20,
-      "accepted": 0
-    },
-    {
-      "source": "news",
-      "url": "https://news.google.com/rss/search?q=%22AI%22%20%22surreal%22%20%22animation%22&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 0,
       "accepted": 0
     }
   ],
   "errors": [],
   "quality_control": {
-    "items_scanned": 46,
+    "items_scanned": 62,
     "qualified_unique": 0,
     "rejected_by_reason": {
       "bukan_hiburan": 10,
-      "lainnya": 5,
-      "tidak_spesifik_visual": 17,
-      "tutorial_atau_promosi": 14
+      "lainnya": 7,
+      "tidak_spesifik_visual": 26,
+      "tutorial_atau_promosi": 19
     }
   },
   "ideas": [],
