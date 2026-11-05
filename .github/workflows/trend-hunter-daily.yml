@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/trend-hunter-daily.yml'
       - 'trendhunter/**'
+      - 'factory/**'
+      - 'tests/**'
       - 'office/**'
   workflow_dispatch:
   schedule:
@@ -34,11 +36,13 @@ jobs:
         run: node --check office/live.js
       - name: Collect public signals
         run: python -m trendhunter.daily
+      - name: Build free creative drafts for Agent 2-6
+        run: python -m factory.pipeline
       - name: Save latest report and 30-day history
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add office/data/latest.json office/data/seen.json office/data/history.json
+          git add office/data/latest.json office/data/seen.json office/data/history.json office/data/factory.json
           if ! git diff --cached --quiet; then
             git commit -m 'data: update public trend signals'
             git fetch origin main

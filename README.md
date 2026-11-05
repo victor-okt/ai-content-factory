@@ -61,3 +61,24 @@ Tidak ada API key dalam repository. Website dan laporan riset bersifat **publik*
 `office/data/history.json` mencatat maksimal 30 tanggal terbaru (satu rangkuman per hari): jumlah sinyal yang diperiksa, contoh video komunitas, sinyal berita/pencarian, dan kegagalan sumber. Kantor pixel menampilkan tujuh tanggal terbaru melalui tombol **Lihat Riwayat Riset**. Semua ini merupakan *aktivitas riset*, bukan angka TikTok atau kinerja konten yang dipublikasi.
 
 Jika riset menemukan 0 sumber yang memenuhi syarat, Nova tetap dapat menampilkan tiga **ide laboratorium** berlabel jelas sebagai contoh editorial, bukan tren nyata. Pilihan ide disimpan hanya di browser pengguna; belum diteruskan secara otomatis ke Agent 2.
+
+
+## Agent 2–6: Creative Pipeline (tanpa biaya)
+
+Workflow \`python -m factory.pipeline\` membaca \`office/data/latest.json\` lalu menghasilkan
+\`office/data/factory.json\`. Menu **STUDIO PRODUKSI** di Pixel Office
+menampilkan paket draft: ide, hook, storyboard 3 adegan/12 detik, prompt gambar,
+prompt video, caption draft, dan status 6 agent.
+
+**Batasan aktual:** Semua teks dihasilkan dengan template Python, bukan AI generatif/LLM.
+Belum ada rendering gambar, rendering video, login TikTok, upload konten, ataupun data views.
+Agent 3 hanya menyiapkan prompt, Agent 4 hanya membuat rencana produksi,
+Agent 5 hanya menyiapkan caption, Agent 6 hanya menampilkan hambatan analytics.
+Output publik tidak boleh memuat API token atau informasi privat.
+Kredit video AI dan publikasi selalu memerlukan keputusan dan akses akun pengguna.
+
+\`\`\`bash
+python -m unittest discover -s tests -v
+python -m trendhunter.daily
+python -m factory.pipeline
+\`\`\`

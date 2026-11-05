@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "pipeline_version": "0.1",
+  "generated_at": null,
+  "agent_1_checked_at": null,
+  "mode": "no_ideas",
+  "draft_count": 0,
+  "agents": [],
+  "jobs": [],
+  "quality_note": "Menunggu eksekusi workflow production pipeline; jangan anggap data ini hasil produksi."
+}
