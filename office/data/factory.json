@@ -1,11 +1,180 @@
 {
   "schema_version": 1,
   "pipeline_version": "0.1",
-  "generated_at": null,
-  "agent_1_checked_at": null,
-  "mode": "no_ideas",
-  "draft_count": 0,
-  "agents": [],
-  "jobs": [],
-  "quality_note": "Menunggu eksekusi workflow production pipeline; jangan anggap data ini hasil produksi."
+  "generated_at": "2026-11-06T03:25:39+07:00",
+  "agent_1_checked_at": "2026-11-06T03:25:36+07:00",
+  "mode": "public_research",
+  "draft_count": 1,
+  "agents": [
+    {
+      "id": "nova",
+      "name": "Nova",
+      "role": "Trend Hunter",
+      "status": "research_available",
+      "detail": "Sumber publik tersimpan"
+    },
+    {
+      "id": "kai",
+      "name": "Kai",
+      "role": "Creative Director",
+      "status": "draft_ready",
+      "detail": "Hook, skrip, dan storyboard template tersedia"
+    },
+    {
+      "id": "mira",
+      "name": "Mira",
+      "role": "Visual Creator",
+      "status": "prompt_ready",
+      "detail": "Prompt gambar siap; rendering memerlukan model dan izin biaya"
+    },
+    {
+      "id": "rio",
+      "name": "Rio",
+      "role": "Video Producer",
+      "status": "render_blocked",
+      "detail": "Timeline siap; belum ada koneksi generator video dan kredit"
+    },
+    {
+      "id": "sora",
+      "name": "Sora",
+      "role": "Content Publisher",
+      "status": "publish_blocked",
+      "detail": "Caption draft siap; publikasi memerlukan akun serta persetujuan"
+    },
+    {
+      "id": "dex",
+      "name": "Dex",
+      "role": "Performance Analyst",
+      "status": "internal_report_only",
+      "detail": "Hanya menghitung status workflow; statistik TikTok belum terhubung"
+    }
+  ],
+  "jobs": [
+    {
+      "content_id": "COMM-1XOS8TX",
+      "title": "Three funny Episodes with Kang and Schacha - a lovely stoneage couple",
+      "origin": "REFERENSI PUBLIK / bukan data TikTok",
+      "source_type": "community_post",
+      "source_url": "https://www.reddit.com/r/aivideos/comments/1xos8tx/three_funny_episodes_with_kang_and_schacha_a/",
+      "score": 79,
+      "metrics_verified": false,
+      "inspiration": "Contoh unggahan video komunitas: Three funny Episodes with Kang and Schacha - a lovely stoneage couple. Inspirasi orisinal: Bangun kejutan visual yang lucu dan mudah dimengerti tanpa dialog.",
+      "creative_director": {
+        "method": "template_free_no_llm",
+        "status": "draft",
+        "hook": "Tunggu... kenapa benda itu melakukan ini?",
+        "big_idea": "Perubahan absurd diakhiri dengan reaksi komedi yang mudah dipahami.",
+        "storyboard": [
+          {
+            "shot": 1,
+            "seconds": [
+              0,
+              2
+            ],
+            "description": "Close-up objek pembuka dan petunjuk perubahan.",
+            "narration": "Tunggu... kenapa benda itu melakukan ini?"
+          },
+          {
+            "shot": 2,
+            "seconds": [
+              2,
+              8
+            ],
+            "description": "Tunjukkan perubahan visual orisinal yang jelas dan sinematik.",
+            "narration": "Fokus pada aksi visual, tanpa penjelasan panjang."
+          },
+          {
+            "shot": 3,
+            "seconds": [
+              8,
+              12
+            ],
+            "description": "Perubahan absurd diakhiri dengan reaksi komedi yang mudah dipahami.",
+            "narration": "Akhiri dengan twist yang bisa di-loop."
+          }
+        ],
+        "duration_seconds": 12,
+        "format": "9:16",
+        "originality": "Hasil harus berupa karya orisinal; sumber hanya inspirasi, bukan untuk ditiru."
+      },
+      "visual_creator": {
+        "status": "prompt_ready_not_rendered",
+        "image_prompt": "Original cinematic vertical 9:16, 12-second concept. lighthearted absurd comedy, medium static framing with a fast reaction close-up. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Perubahan absurd diakhiri dengan reaksi komedi yang mudah dipahami.",
+        "reference_frames": [
+          "Frame 1: Close-up objek pembuka dan petunjuk perubahan.",
+          "Frame 2: Tunjukkan perubahan visual orisinal yang jelas dan sinematik.",
+          "Frame 3: Perubahan absurd diakhiri dengan reaksi komedi yang mudah dipahami."
+        ],
+        "character_consistency": "Gunakan karakter dan wardrobe original yang identik sepanjang adegan.",
+        "rendered_images": []
+      },
+      "video_producer": {
+        "status": "render_blocked",
+        "duration_seconds": 12,
+        "shot_timeline": [
+          {
+            "shot": 1,
+            "seconds": [
+              0,
+              2
+            ],
+            "description": "Close-up objek pembuka dan petunjuk perubahan.",
+            "narration": "Tunggu... kenapa benda itu melakukan ini?"
+          },
+          {
+            "shot": 2,
+            "seconds": [
+              2,
+              8
+            ],
+            "description": "Tunjukkan perubahan visual orisinal yang jelas dan sinematik.",
+            "narration": "Fokus pada aksi visual, tanpa penjelasan panjang."
+          },
+          {
+            "shot": 3,
+            "seconds": [
+              8,
+              12
+            ],
+            "description": "Perubahan absurd diakhiri dengan reaksi komedi yang mudah dipahami.",
+            "narration": "Akhiri dengan twist yang bisa di-loop."
+          }
+        ],
+        "video_prompt": "Original cinematic vertical 9:16, 12-second concept. lighthearted absurd comedy, medium static framing with a fast reaction close-up. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Perubahan absurd diakhiri dengan reaksi komedi yang mudah dipahami. Natural continuous motion, engaging first two seconds.",
+        "editing_notes": "Utamakan visual storytelling, sound design orisinal, dan looping ending.",
+        "rendered_video_url": "",
+        "blocker": "Perlu provider video, koneksi akun, kredit, dan batas biaya."
+      },
+      "publisher": {
+        "status": "draft_not_published",
+        "caption_draft": "Kalau three funny episodes with kang and schacha - a lovely stoneage couple bisa berubah jadi nyata... kamu bakal ngapain? 👀 #AIVideo #VisualStory #ShortFilm",
+        "posting_format": "9:16 vertical short",
+        "published_url": "",
+        "blocker": "Perlu izin pengguna dan koneksi akun TikTok/Shopee bila publikasi diaktifkan."
+      },
+      "analyst": {
+        "status": "waiting_platform_analytics",
+        "platform_views": null,
+        "retention": null,
+        "revenue": null,
+        "blocker": "Belum tersedia koneksi data analytics TikTok."
+      },
+      "approval": {
+        "creative_draft": "auto_generated_unreviewed",
+        "render": "requires_access_and_budget",
+        "publish": "requires_user_approval"
+      },
+      "external_actions": {
+        "image_generation": false,
+        "video_generation": false,
+        "posting": false
+      }
+    }
+  ],
+  "quality_note": "Skrip dan prompt adalah template otomatis, bukan AI generatif. Referensi publik dan ide lab dibedakan; belum ada render atau posting.",
+  "cost": {
+    "estimate": "Rp0 untuk template & perencanaan",
+    "spent_by_pipeline": 0,
+    "paid_services_called": false
+  }
 }
