@@ -38,7 +38,10 @@ jobs:
           git add office/data/latest.json office/data/seen.json
           if ! git diff --cached --quiet; then
             git commit -m 'data: update public trend signals'
-            git push
+            # Reconcile changes pushed while today's source scan was running.
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
       - name: Prepare GitHub Pages
         uses: actions/configure-pages@v5
