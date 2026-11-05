@@ -1,0 +1,23 @@
+name: One-time recovery for stuck GitHub Pages deployment
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/recover-stuck-pages.yml'
+permissions:
+  contents: read
+  pages: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect the old Pages deployment reported as stuck
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/pages/deployments/bc3d6f787749cb99a60d8f4d90a8a4aacfa858aa" || true
+      - name: Cancel only the previously reported stuck Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/deployments/bc3d6f787749cb99a60d8f4d90a8a4aacfa858aa/cancel"
