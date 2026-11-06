@@ -91,3 +91,17 @@ Pengujian `tests/test_offline_pipeline_integration.py` menjalankan `factory.pipe
 Jalankan `python -m unittest discover -s tests -v`. Workflow `.github/workflows/test.yml` menjalankan perintah yang sama pada push, pull request, atau manual dispatch. **Keberadaan tes atau commit tidak membuktikan GitHub Actions sudah lulus**; periksa hasil run pada tab Actions.
 
 **Batas pekerjaan berikutnya:** verifikasi CI, validasi output dashboard, lalu evaluasi provider AI video hanya setelah persetujuan pengguna untuk akun, biaya, dan kredensial. Tidak ada publikasi otomatis tanpa persetujuan eksplisit.
+
+
+## Credit Guard — simulasi terkunci (Rp0)
+
+Kode: `factory/credit_guard.py`. Pengujian: `tests/test_credit_guard.py`.
+
+- Anggaran harian **Rp0** dan maksimal **1 percobaan per video**.
+- `authorize_video_attempt(...)` selalu mengembalikan `allowed=False`: percobaan berbayar ditolak dan percobaan gratis hanya disimulasikan.
+- Laporan `office/data/factory.json` menyertakan `credit_guard` (mode, budget, batas percobaan, dan pengeluaran aktual Rp0).
+- Tidak ada koneksi ke API video, pembayaran, penyimpanan kredensial, atau publikasi.
+- **Jangan** mengaktifkan provider berbayar atau menaikkan budget tanpa persetujuan eksplisit pemilik.
+- Ini adalah pengaman di pipeline Python, **bukan** batas penagihan di akun provider eksternal. Sebelum integrasi provider, semua jalur pemanggilan API harus melewati guard dan batas biaya provider juga harus diatur.
+
+Jalankan tes: `python -m unittest discover -s tests -v`. Status keberhasilan CI harus diperiksa terpisah di GitHub Actions.
