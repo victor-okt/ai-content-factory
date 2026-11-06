@@ -7,6 +7,7 @@ publish TikTok posts, or fetch TikTok analytics.
 from __future__ import annotations
 
 import json
+import math
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -77,6 +78,16 @@ def safe_link(value):
     return value
 
 
+def safe_score(value):
+    """Keep only finite numeric heuristic scores; never accept bool or strings."""
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    try:
+        return value if math.isfinite(value) else None
+    except (OverflowError, TypeError, ValueError):
+        return None
+
+
 def agent_statuses(jobs, mode):
     has_jobs = bool(jobs)
     return [
@@ -131,7 +142,7 @@ def build_job(idea, mode):
     return {
         "content_id": uid, "title": title, "origin": "IDE LAB / belum terverifikasi" if lab else "REFERENSI PUBLIK / bukan data TikTok",
         "source_type": "editorial_seed" if lab else clean_text(idea.get("source_type") or idea.get("signal_source"), 100),
-        "source_url": "" if lab else source, "score": None if lab else idea.get("score"),
+        "source_url": "" if lab else source, "score": None if lab else safe_score(idea.get("score")),
         "metrics_verified": False, "inspiration": angle,
         "creative_director": {
             "method": "template_free_no_llm", "status": "draft",
