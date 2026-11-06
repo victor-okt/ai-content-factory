@@ -12,6 +12,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from factory.credit_guard import public_policy
+
 WIB = timezone(timedelta(hours=7))
 MAX_JOBS = 3
 
@@ -212,6 +214,7 @@ def build_factory(report, clock=None):
         "agents": agent_statuses(jobs, mode), "jobs": jobs,
         "quality_note": "Skrip dan prompt adalah template otomatis, bukan AI generatif. "
                         "Referensi publik dan ide lab dibedakan; belum ada render atau posting.",
+        "credit_guard": public_policy(),
         "cost": {"estimate": "Rp0 untuk template & perencanaan", "spent_by_pipeline": 0,
                  "paid_services_called": False},
     }
