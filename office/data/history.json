@@ -3,11 +3,11 @@
   "entries": [
     {
       "date": "2026-11-06",
-      "checked_at": "2026-11-06T06:57:26+07:00",
+      "checked_at": "2026-11-06T08:04:20+07:00",
       "status": "ok",
       "items_scanned": 84,
-      "qualifying_examples": 2,
-      "community_examples": 2,
+      "qualifying_examples": 3,
+      "community_examples": 3,
       "news_and_search_signals": 0,
       "source_errors": 0
     }
