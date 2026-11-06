@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from factory.credit_guard import public_policy
+from factory.opensource_video import make_render_plan
 
 WIB = timezone(timedelta(hours=7))
 MAX_JOBS = 3
@@ -129,12 +130,15 @@ def build_job(idea, mode):
     hook = pattern["hook"]
     payoff = pattern["payoff"]
     scenes = [
-        {"shot": 1, "seconds": [0, 2], "description": "Close-up objek pembuka dan petunjuk perubahan.", "narration": hook},
-        {"shot": 2, "seconds": [2, 8], "description": "Tunjukkan perubahan visual orisinal yang jelas dan sinematik.", "narration": "Fokus pada aksi visual, tanpa penjelasan panjang."},
-        {"shot": 3, "seconds": [8, 12], "description": payoff, "narration": "Akhiri dengan twist yang bisa di-loop."},
+        {"shot": 1, "seconds": [0, 5], "description": "Hook visual: objek dan kejadian mustahil langsung terlihat.", "narration": hook},
+        {"shot": 2, "seconds": [5, 10], "description": "Perkenalkan karakter dan tujuan yang jelas.", "narration": "Biarkan aksi visual bercerita."},
+        {"shot": 3, "seconds": [10, 15], "description": "Perubahan pertama dan eskalasi konflik.", "narration": "Bangun rasa penasaran."},
+        {"shot": 4, "seconds": [15, 20], "description": "Perubahan kedua dengan gerakan kamera konsisten.", "narration": "Pertahankan kesinambungan karakter."},
+        {"shot": 5, "seconds": [20, 25], "description": "Puncak aksi dan kejutan visual.", "narration": "Tunjukkan payoff."},
+        {"shot": 6, "seconds": [25, 30], "description": payoff, "narration": "Akhiri dengan twist yang bisa di-loop."},
     ]
     prompt_base = (
-        "Original cinematic vertical 9:16, 12-second concept. "
+        "Original cinematic vertical 9:16, 30-second concept. "
         + pattern["mood"] + ", " + pattern["camera"]
         + ". Visual subject inspired by a public topic but redesigned as a fully original "
           "character, world and composition. Never copy a named artist, copyrighted footage, "
@@ -149,7 +153,7 @@ def build_job(idea, mode):
         "creative_director": {
             "method": "template_free_no_llm", "status": "draft",
             "hook": hook, "big_idea": payoff,
-            "storyboard": scenes, "duration_seconds": 12, "format": "9:16",
+            "storyboard": scenes, "duration_seconds": 30, "format": "9:16",
             "originality": "Hasil harus berupa karya orisinal; sumber hanya inspirasi, bukan untuk ditiru.",
         },
         "visual_creator": {
@@ -206,6 +210,8 @@ def build_factory(report, clock=None):
     if not jobs:
         mode = "no_ideas"
     clock = clock or datetime.now(WIB)
+    for job in jobs:
+        job["open_source_video_plan"] = make_render_plan(job)
     return {
         "schema_version": 1, "pipeline_version": "0.1",
         "generated_at": clock.isoformat(timespec="seconds"),
