@@ -43,7 +43,10 @@ var ideas=node("div");
 var detail=node("div","detail");
 grid.append(ideas,detail);
 var caution=node("p","warn","PERHATIAN: Karakter bergerak adalah tampilan game. Munculnya prompt tidak berarti gambar/video sudah dirender atau konten sudah diposting.");
-panel.append(title,explanation,stats,agents,grid,caution);
+var refresh=node("button","copy","↻ PERBARUI STATUS");
+refresh.type="button";
+refresh.setAttribute("aria-label","Muat ulang data produksi dari GitHub Pages");
+panel.append(title,explanation,refresh,stats,agents,grid,caution);
 var data=null;
 var selected="";
 try{selected=localStorage.getItem("acf-pixel-office-selected-idea")||""}catch(e){}
@@ -99,6 +102,8 @@ function draw(){
  showDetail(queue.find(x=>x.content_id===selected));
 }
 async function load(){
+ refresh.disabled=true;
+ refresh.textContent="MEMUAT...";
  try{
   var response=await fetch("./data/factory.json?ts="+Date.now(),{cache:"no-store"});
   if(!response.ok)throw new Error("HTTP "+response.status);
@@ -109,8 +114,12 @@ async function load(){
  }catch(e){
   stats.textContent="Rencana produksi belum tersedia. Akan muncul setelah proses GitHub berikutnya.";
   detail.textContent="Info: "+String(e.message||e);
+ }finally{
+  refresh.disabled=false;
+  refresh.textContent="↻ PERBARUI STATUS";
  }
 }
+refresh.onclick=load;
 load();
 window.addEventListener("storage",function(e){if(e.key==="acf-pixel-office-selected-idea"){selected=e.newValue||"";if(data)draw()}});
 })();
