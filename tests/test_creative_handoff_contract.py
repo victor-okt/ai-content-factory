@@ -21,13 +21,13 @@ class CreativeHandoffContractTests(unittest.TestCase):
         job = result["jobs"][0]
         director = job["creative_director"]
         self.assertEqual(director["method"], "template_free_no_llm")
-        self.assertEqual(director["duration_seconds"], 12)
+        self.assertEqual(director["duration_seconds"], 30)
         self.assertEqual(director["format"], "9:16")
         self.assertEqual([scene["seconds"] for scene in director["storyboard"]],
-                         [[0, 2], [2, 8], [8, 12]])
-        self.assertEqual([scene["shot"] for scene in director["storyboard"]], [1, 2, 3])
+                         [[0, 5], [5, 10], [10, 15], [15, 20], [20, 25], [25, 30]])
+        self.assertEqual([scene["shot"] for scene in director["storyboard"]], [1, 2, 3, 4, 5, 6])
         self.assertEqual(job["video_producer"]["shot_timeline"], director["storyboard"])
-        self.assertEqual(len(job["visual_creator"]["reference_frames"]), 3)
+        self.assertEqual(len(job["visual_creator"]["reference_frames"]), 6)
         self.assertEqual(job["visual_creator"]["rendered_images"], [])
         self.assertEqual(job["video_producer"]["rendered_video_url"], "")
         self.assertEqual(job["publisher"]["published_url"], "")
