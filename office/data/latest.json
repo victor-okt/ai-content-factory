@@ -2,8 +2,8 @@
   "schema_version": 1,
   "agent_version": "1.3",
   "status": "ok",
-  "last_checked_at": "2026-11-06T12:18:23+07:00",
-  "last_success_at": "2026-11-06T12:18:23+07:00",
+  "last_checked_at": "2026-11-06T12:20:56+07:00",
+  "last_success_at": "2026-11-06T12:20:56+07:00",
   "feed_checks": [
     {
       "source": "trends",
