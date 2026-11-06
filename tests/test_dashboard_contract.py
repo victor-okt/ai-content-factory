@@ -16,6 +16,15 @@ class DashboardContractTests(unittest.TestCase):
         self.assertIn("render belum dijalankan", script)
         self.assertIn("posting belum dilakukan", script)
 
+    def test_manual_refresh_does_not_trigger_external_actions(self):
+        script = (ROOT / "office" / "factory.js").read_text(encoding="utf-8")
+        self.assertIn("refresh.onclick=load", script)
+        self.assertIn('fetch("./data/factory.json?ts="', script)
+        self.assertIn('{cache:"no-store"}', script)
+        self.assertIn("refresh.disabled=true", script)
+        self.assertIn("refresh.disabled=false", script)
+        self.assertNotIn("fetch(\"https://", script)
+
     def test_published_snapshot_has_consistent_draft_counts(self):
         path = ROOT / "office" / "data" / "factory.json"
         self.assertTrue(path.is_file(), "Production dashboard needs factory.json")
