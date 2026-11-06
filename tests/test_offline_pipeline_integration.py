@@ -36,10 +36,12 @@ class OfflinePipelineIntegrationTests(unittest.TestCase):
             job = saved["jobs"][0]
             self.assertEqual(job["content_id"], "integration-001")
             self.assertEqual(job["creative_director"]["format"], "9:16")
-            self.assertEqual(job["creative_director"]["duration_seconds"], 12)
+            self.assertEqual(job["creative_director"]["duration_seconds"], 30)
             self.assertEqual(job["video_producer"]["shot_timeline"],
                              job["creative_director"]["storyboard"])
-            self.assertEqual(len(job["visual_creator"]["reference_frames"]), 3)
+            self.assertEqual(len(job["visual_creator"]["reference_frames"]), 6)
+            self.assertEqual(len(job["open_source_video_plan"]["clips"]), 6)
+            self.assertFalse(job["open_source_video_plan"]["render_enabled"])
             self.assertTrue(job["publisher"]["caption_draft"])
             self.assertEqual(job["visual_creator"]["rendered_images"], [])
             self.assertEqual(job["video_producer"]["rendered_video_url"], "")
