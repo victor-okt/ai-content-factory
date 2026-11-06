@@ -105,3 +105,12 @@ Kode: `factory/credit_guard.py`. Pengujian: `tests/test_credit_guard.py`.
 - Ini adalah pengaman di pipeline Python, **bukan** batas penagihan di akun provider eksternal. Sebelum integrasi provider, semua jalur pemanggilan API harus melewati guard dan batas biaya provider juga harus diatur.
 
 Jalankan tes: `python -m unittest discover -s tests -v`. Status keberhasilan CI harus diperiksa terpisah di GitHub Actions.
+
+
+## Rencana video 30 detik dengan model open-source
+
+`factory/opensource_video.py` menyusun rencana produksi 30 detik dalam enam klip @5 detik, yang nantinya dapat dikirim ke ComfyUI lokal atau server GPU. Pipeline `factory/pipeline.py` kini menghasilkan storyboard 6 adegan dan menyertakan `open_source_video_plan` untuk setiap draft.
+
+Calon model: [Wan 2.2](https://github.com/Wan-Video/Wan2.2) dan [HunyuanVideo-1.5](https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5). Pemilihan model final bergantung pada VRAM GPU, lisensi, dan kualitas uji. Tidak ada klaim kualitas setara Seedance tanpa benchmark. ComfyUI adalah pilihan integrasi, **belum ada worker GPU, endpoint, atau rendering yang terhubung**. Menjalankan model di GPU milik sendiri dapat menghindari biaya API per video, tetapi listrik dan perangkat tetap berbiaya; sewa GPU juga berbayar.
+
+**Status:** rencana/kontrak offline saja. Belum ada video MP4 yang dihasilkan, tidak ada koneksi API berbayar, dan tidak ada publikasi. Credit Guard saat ini tetap simulasi Rp0 sampai pemilik menentukan kebijakan biaya baru. Periksa hasil CI sebelum menganggap perubahan ini siap produksi.
