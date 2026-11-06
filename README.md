@@ -1,6 +1,6 @@
 # AI Content Factory — Pixel Office 🎮
 
-Kantor AI virtual bergaya pixel. **Agent 1 (Nova / Trend Hunter) sudah memiliki kode riset otomatis; agent lain masih karakter visual, belum agent aktif.**
+Kantor AI virtual bergaya pixel. **Agent 1 memiliki kode riset publik. Agent 2–6 memiliki pipeline draft offline berbasis template, bukan AI generatif atau layanan video yang aktif.**
 
 ## Cara membuka Pixel Office
 
@@ -29,7 +29,7 @@ Di layar kantor, ketuk Nova (Trend Hunter), lalu pilih **Lihat Laporan**.
 - ✅ Laporan pertama dari sumber publik
 - ⏳ Aktivasi GitHub Pages oleh pemilik repository
 - ⏳ Peningkatan kualitas filter tren TikTok entertainment
-- 🔒 Agent 2–6 belum dibuat
+- ✅ Agent 2–6: pipeline draft offline tersedia (storyboard, prompt, timeline, caption, status internal); belum rendering, posting, atau analytics platform
 
 ## Pengujian
 
@@ -82,3 +82,12 @@ python -m unittest discover -s tests -v
 python -m trendhunter.daily
 python -m factory.pipeline
 \`\`\`
+
+
+## Verifikasi handoff offline (Agent 1 → Agent 2–6)
+
+Pengujian `tests/test_offline_pipeline_integration.py` menjalankan `factory.pipeline.run()` di folder sementara, membaca contoh `office/data/latest.json`, dan memastikan `office/data/factory.json` berisi storyboard, prompt, timeline, serta caption. Tes juga memeriksa bahwa gambar/video belum dirender, posting tidak dilakukan, statistik platform tidak direkayasa, dan biaya pipeline tetap nol. Kasus tanpa ide harus menghasilkan paket kosong yang aman.
+
+Jalankan `python -m unittest discover -s tests -v`. Workflow `.github/workflows/test.yml` menjalankan perintah yang sama pada push, pull request, atau manual dispatch. **Keberadaan tes atau commit tidak membuktikan GitHub Actions sudah lulus**; periksa hasil run pada tab Actions.
+
+**Batas pekerjaan berikutnya:** verifikasi CI, validasi output dashboard, lalu evaluasi provider AI video hanya setelah persetujuan pengguna untuk akun, biaya, dan kredensial. Tidak ada publikasi otomatis tanpa persetujuan eksplisit.
