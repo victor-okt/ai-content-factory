@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "theme": "original short anime-adventure-style names; not Hunter x Hunter character names",
+  "compatibility": "Internal agent IDs remain unchanged to avoid breaking existing Pixel Office workflows",
+  "agents": [
+    {"id":"nova","legacy_name":"Nova","display_name":"Nox","role":"Trend Hunter","vo1995":"riset ide dan tren"},
+    {"id":"kai","legacy_name":"Kai","display_name":"Kiro","role":"Story Writer","vo1995":"naskah, hook, twist"},
+    {"id":"mira","legacy_name":"Mira","display_name":"Miko","role":"Visual Artist","vo1995":"aset karakter dan storyboard"},
+    {"id":"rio","legacy_name":"Rio","display_name":"Riku","role":"Motion Director","vo1995":"animasi, audio, render"},
+    {"id":"sora","legacy_name":"Sora","display_name":"Senn","role":"Publisher","vo1995":"caption, metadata, antrean publikasi"},
+    {"id":"dex","legacy_name":"Dex","display_name":"Zek","role":"Quality Guardian","vo1995":"quality gate, keamanan, biaya"}
+  ],
+  "policies": {"paid_api_without_approval":false,"auto_publish":false,"credentials_in_repo":false}
+}
