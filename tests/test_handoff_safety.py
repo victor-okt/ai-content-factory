@@ -44,7 +44,7 @@ class HandoffSafetyTest(unittest.TestCase):
         self.assertEqual(output["draft_count"], 1)
         self.assertEqual(output["jobs"][0]["creative_director"]["method"],
                          "template_free_no_llm")
-        self.assertEqual(len(output["jobs"][0]["creative_director"]["storyboard"]), 3)
+        self.assertEqual(len(output["jobs"][0]["creative_director"]["storyboard"]), 6)
 
 
 if __name__ == "__main__":
