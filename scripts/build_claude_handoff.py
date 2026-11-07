@@ -26,7 +26,7 @@ def main():
     checks=[
       run("Python tests",["python","-m","unittest","discover","-s","tests","-v"]),
       run("Node motion tests",["node","--test",*sorted(str(p.relative_to(ROOT)) for p in (ROOT/"motion-video/character-engine").glob("*.test.mjs"))]) if list((ROOT/"motion-video/character-engine").glob("*.test.mjs")) else ("Node motion tests",99,"No *.test.mjs files found\n"),
-      run("Office runtime queue tests",["python","-m","unittest","-v","test_queue.py"],ROOT/"office/runtime")
+      run("Office runtime queue tests",["python","-m","unittest","discover","-s",".","-p","test_*.py","-v"],ROOT/"office/runtime")
     ]
     failures=[name for name,code,_ in checks if code!=0]
     log=["CLAUDE HANDOFF TEST REPORT","Generated UTC: "+datetime.now(timezone.utc).isoformat(),"Git commit: "+sha,"Python: "+sys.version,""]
