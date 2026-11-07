@@ -163,7 +163,7 @@ def build_job(idea, mode):
             "rendered_images": [],
         },
         "video_producer": {
-            "status": "render_blocked", "duration_seconds": 12,
+            "status": "render_blocked", "duration_seconds": scenes[-1]["seconds"][1],
             "shot_timeline": scenes,
             "video_prompt": prompt_base + " Natural continuous motion, engaging first two seconds.",
             "editing_notes": "Utamakan visual storytelling, sound design orisinal, dan looping ending.",
