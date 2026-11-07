@@ -1,19 +1,46 @@
-# Pixel Office — Windows offline worker prototype
+# Pixel Office — worker antrean lokal (Windows / Linux)
 
-This is **not yet a one-click autonomous AI factory**. It is a small SQLite-backed persistent job queue with Kiro (offline story outline template) and Zek (quality gate template). No ElevenLabs integration, autonomous reasoning, or video rendering yet.
+**Bukan** pabrik AI otomatis. Ini antrean tugas SQLite yang tahan crash, dengan worker.
+Tugas `story_outline` (Kiro) dan `quality_gate` (Zek) masih **template**, bukan AI generatif.
+Belum ada ElevenLabs, model AI, atau render video. Tidak ada API berbayar, tidak ada publikasi otomatis.
+
+## Yang sudah diuji (`test_jobqueue.py`, 20 tes)
+- Tugas tersimpan di disk dan tetap ada setelah program dimatikan.
+- Tugas yang tertinggal "running" setelah crash dipulihkan (diuji juga dengan `kill -9` sungguhan).
+- Retry terbatas (3 kali) dengan jeda 30 detik, 2 menit, 10 menit; setelah itu ditandai gagal.
+- Kunci idempotensi: `--key` yang sama tidak membuat tugas ganda.
+- Empat worker serentak tidak pernah mengambil tugas yang sama.
+- Berhenti dengan aman (file `STOP`, perintah `stop`, atau Ctrl+C).
+- Log berputar (`runtime-data/logs/worker.log`), `status.json`, dan `report.md`.
+- GitHub Actions menjalankan tes yang sama di Linux **dan Windows**.
 
 ## Windows
-1. Install Python 3.10+ if missing.
-2. Download repository ZIP and extract.
-3. Open `office/runtime/START_WINDOWS.bat`.
-4. It initializes the database, enqueues one Kiro story-outline task, processes it, and prints status. It does **not** install an always-on service or run at startup.
+1. Pasang Python 3.10+ dari python.org (centang "Add Python to PATH").
+2. Unduh repo sebagai ZIP, ekstrak, buka folder `office/runtime`.
+3. `START_WINDOWS.bat` — uji cepat 2 tugas contoh.
+4. `RUN_WORKER_WINDOWS.bat` — worker terus berjalan. `STOP_WINDOWS.bat` — menghentikannya.
 
-## Tests
-`cd office/runtime && python -m unittest test_queue.py`
+File `.bat` belum pernah dijalankan manual di Windows pemilik; yang diuji otomatis adalah kode Python-nya.
+Worker belum dipasang sebagai layanan: tidak berjalan sendiri saat komputer menyala.
 
-## Next steps
-- Replace offline templates with reviewed model-provider integration and a strict budget guard.
-- Add real asset-based puppet renderer, narration, subtitle compositor and FFmpeg verification.
-- Add a user-approved Windows Task Scheduler installation after worker reliability is tested.
-- Store credentials in OS secrets or environment variables, never in repository.
-- Human approval required for publishing; paid API calls disabled by default.
+## Perintah
+```
+python jobqueue.py init
+python jobqueue.py enqueue --agent kiro --kind story_outline --idea "Bayangan yang Ingin Libur" --key cerita-1
+python jobqueue.py worker [--until-empty] [--poll 5] [--max-jobs N]
+python jobqueue.py status | report | stop
+```
+Data ada di `office/runtime/runtime-data/` (diabaikan git). Ganti dengan `--dir` atau `OFFICE_RUNTIME_DIR`.
+
+## Tes
+`cd office/runtime && python -m unittest -v test_jobqueue`
+
+## Penting
+File ini sengaja **bukan** `queue.py`: nama itu menimpa modul bawaan Python `queue` dan akan merusak
+fitur lain (logging, threading) begitu worker bertambah fungsi.
+
+## Langkah berikutnya
+- Hubungkan story ke model AI yang disetujui pemilik, dengan batas biaya.
+- Puppet Kitsune dari aset master, renderer, narasi, subtitle, FFmpeg.
+- Task Scheduler Windows setelah worker terbukti andal.
+- Kunci/API disimpan di environment atau OS secret, tidak pernah di repo.
