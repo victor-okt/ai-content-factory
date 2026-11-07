@@ -67,7 +67,7 @@ Jika riset menemukan 0 sumber yang memenuhi syarat, Nova tetap dapat menampilkan
 
 Workflow \`python -m factory.pipeline\` membaca \`office/data/latest.json\` lalu menghasilkan
 \`office/data/factory.json\`. Menu **STUDIO PRODUKSI** di Pixel Office
-menampilkan paket draft: ide, hook, storyboard 3 adegan/12 detik, prompt gambar,
+menampilkan paket draft: ide, hook, storyboard 6 adegan/30 detik, prompt gambar,
 prompt video, caption draft, dan status 6 agent.
 
 **Batasan aktual:** Semua teks dihasilkan dengan template Python, bukan AI generatif/LLM.
