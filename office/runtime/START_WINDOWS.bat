@@ -1,4 +1,6 @@
 @echo off
+rem Uji cepat: membuat 2 tugas contoh, mengerjakannya, lalu menampilkan laporan.
+rem Klik dua kali aman: tugas contoh memakai kunci tetap, jadi tidak dobel.
 setlocal
 cd /d "%~dp0"
 where py >nul 2>nul
@@ -7,16 +9,18 @@ if %errorlevel%==0 (
 ) else (
   where python >nul 2>nul
   if errorlevel 1 (
-    echo Python 3 is not installed. Install it from python.org first.
+    echo Python 3 belum terpasang. Pasang dari python.org dulu.
     pause
     exit /b 1
   )
   set "PY=python"
 )
-%PY% queue.py init
-%PY% queue.py enqueue --agent kiro --kind story_outline
-%PY% queue.py run-once
-%PY% queue.py status
+%PY% jobqueue.py init
+%PY% jobqueue.py enqueue --agent kiro --kind story_outline --key demo-story-outline
+%PY% jobqueue.py enqueue --agent zek --kind quality_gate --key demo-quality-gate
+%PY% jobqueue.py worker --until-empty
+%PY% jobqueue.py status
 echo.
-echo Prototype finished. This does NOT run AI models or render video.
+echo Selesai. Ini TIDAK menjalankan model AI dan TIDAK membuat video.
+echo Laporan ada di folder runtime-data (report.md).
 pause
