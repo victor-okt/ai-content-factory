@@ -1,0 +1,25 @@
+1
+00:00:00,000 --> 00:00:01,250
+Suatu hari,
+
+2
+00:00:01,250 --> 00:00:03,050
+seekor rubah kecil
+
+3
+00:00:03,050 --> 00:00:05,080
+menemukan payung
+yang takut hujan.
+
+4
+00:00:05,080 --> 00:00:06,320
+Aneh, bukan?
+
+5
+00:00:06,320 --> 00:00:08,050
+Padahal tugas payung
+
+6
+00:00:08,050 --> 00:00:09,796
+adalah melindungi orang
+dari hujan.
