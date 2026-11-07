@@ -1,0 +1,36 @@
+name: Claude Handoff Package
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/claude-handoff.yml'
+      - 'scripts/build_claude_handoff.py'
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run tests and build safe ZIP
+        run: python scripts/build_claude_handoff.py
+      - name: Upload full package and test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-handoff-main
+          path: |
+            handoff-output/REPO_MAIN_SANITIZED.zip
+            handoff-output/HASIL_TES.txt
+            handoff-output/STATUS_JUJUR.md
+          if-no-files-found: warn
+          retention-days: 14
