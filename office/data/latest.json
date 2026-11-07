@@ -2,8 +2,8 @@
   "schema_version": 1,
   "agent_version": "1.3",
   "status": "ok",
-  "last_checked_at": "2026-11-06T12:28:43+07:00",
-  "last_success_at": "2026-11-06T12:28:43+07:00",
+  "last_checked_at": "2026-11-07T23:15:46+07:00",
+  "last_success_at": "2026-11-07T23:15:46+07:00",
   "feed_checks": [
     {
       "source": "trends",
@@ -26,7 +26,7 @@
     {
       "source": "news",
       "url": "https://news.google.com/rss/search?q=animated%20short%20film%20fantasy&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 7,
+      "feed_items": 8,
       "accepted": 0
     },
     {
@@ -50,36 +50,36 @@
     {
       "source": "news",
       "url": "https://news.google.com/rss/search?q=kartu%20animasi%20video%20pendek&hl=id&gl=ID&ceid=ID:id",
-      "feed_items": 18,
+      "feed_items": 19,
       "accepted": 0
     },
     {
       "source": "community",
       "url": "https://www.reddit.com/r/aivideos/new/.rss",
       "feed_items": 25,
-      "accepted": 3
+      "accepted": 2
     }
   ],
   "errors": [],
   "quality_control": {
-    "items_scanned": 84,
-    "qualified_unique": 3,
+    "items_scanned": 86,
+    "qualified_unique": 2,
     "rejected_by_reason": {
       "bukan_hiburan": 10,
-      "komunitas_tidak_lolos": 22,
+      "komunitas_tidak_lolos": 23,
       "lainnya": 7,
-      "tidak_spesifik_visual": 24,
-      "tutorial_atau_promosi": 18
+      "tidak_spesifik_visual": 25,
+      "tutorial_atau_promosi": 19
     }
   },
   "ideas": [
     {
-      "content_id": "COMM-1XP4CZF",
-      "title": "Assassin -- Ye Dechun #kungfu #aishorts #indiefilm #cat #chinesedrama #s...",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xp4czf/assassin_ye_dechun_kungfu_aishorts_indiefilm_cat/",
-      "observed_at": "2026-11-06",
+      "content_id": "COMM-1XQ3RKP",
+      "title": "Vibe coding satiric/funny music video",
+      "source_url": "https://www.reddit.com/r/aivideos/comments/1xq3rkp/vibe_coding_satiricfunny_music_video/",
+      "observed_at": "2026-11-07",
       "category": "surreal_comedy",
-      "concept": "Contoh unggahan video komunitas: Assassin -- Ye Dechun #kungfu #aishorts #indiefilm #cat #chinesedrama #s.... Inspirasi orisinal: Bangun kejutan visual yang lucu dan mudah dimengerti tanpa dialog.",
+      "concept": "Contoh unggahan video komunitas: Vibe coding satiric/funny music video. Inspirasi orisinal: Bangun kejutan visual yang lucu dan mudah dimengerti tanpa dialog.",
       "score": 79,
       "score_label": "Kecocokan konsep, bukan tingkat viral",
       "score_breakdown": {
@@ -100,24 +100,24 @@
       "metrics_verified": false,
       "approval_status": "menunggu_persetujuan",
       "creative_brief": {
-        "idea_id": "COMM-1XP4CZF",
+        "idea_id": "COMM-1XQ3RKP",
         "duration_seconds": 12,
         "ratio": "9:16",
         "angle": "Bangun kejutan visual yang lucu dan mudah dimengerti tanpa dialog.",
-        "source_url": "https://www.reddit.com/r/aivideos/comments/1xp4czf/assassin_ye_dechun_kungfu_aishorts_indiefilm_cat/",
+        "source_url": "https://www.reddit.com/r/aivideos/comments/1xq3rkp/vibe_coding_satiricfunny_music_video/",
         "guidance": "Buat karya orisinal; jangan menyalin footage atau desain milik pembuat asal."
       },
       "next_agent": "creative_director",
-      "first_seen_at": "2026-11-06",
-      "seen_before": true
+      "first_seen_at": "2026-11-07",
+      "seen_before": false
     },
     {
-      "content_id": "COMM-1XOTW6K",
-      "title": "THE COMING | 80s Sci-Fi Alien Invasion Short Film Part 1",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xotw6k/the_coming_80s_scifi_alien_invasion_short_film/",
-      "observed_at": "2026-11-05",
+      "content_id": "COMM-1XQ6QDU",
+      "title": "Payload Preparation #scifi #battlefield #alien #aivideo #aicreator #aijoeuk",
+      "source_url": "https://www.reddit.com/r/aivideos/comments/1xq6qdu/payload_preparation_scifi_battlefield_alien/",
+      "observed_at": "2026-11-07",
       "category": "visual_transformation",
-      "concept": "Contoh unggahan video komunitas: THE COMING | 80s Sci-Fi Alien Invasion Short Film Part 1. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
+      "concept": "Contoh unggahan video komunitas: Payload Preparation #scifi #battlefield #alien #aivideo #aicreator #aijoeuk. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
       "score": 73,
       "score_label": "Kecocokan konsep, bukan tingkat viral",
       "score_breakdown": {
@@ -138,54 +138,16 @@
       "metrics_verified": false,
       "approval_status": "menunggu_persetujuan",
       "creative_brief": {
-        "idea_id": "COMM-1XOTW6K",
+        "idea_id": "COMM-1XQ6QDU",
         "duration_seconds": 12,
         "ratio": "9:16",
         "angle": "Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-        "source_url": "https://www.reddit.com/r/aivideos/comments/1xotw6k/the_coming_80s_scifi_alien_invasion_short_film/",
+        "source_url": "https://www.reddit.com/r/aivideos/comments/1xq6qdu/payload_preparation_scifi_battlefield_alien/",
         "guidance": "Buat karya orisinal; jangan menyalin footage atau desain milik pembuat asal."
       },
       "next_agent": "creative_director",
-      "first_seen_at": "2026-11-06",
-      "seen_before": true
-    },
-    {
-      "content_id": "COMM-1XOZDC0",
-      "title": "horror short film, paranormal animals",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xozdc0/horror_short_film_paranormal_animals/",
-      "observed_at": "2026-11-06",
-      "category": "visual_transformation",
-      "concept": "Contoh unggahan video komunitas: horror short film, paranormal animals. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-      "score": 73,
-      "score_label": "Kecocokan konsep, bukan tingkat viral",
-      "score_breakdown": {
-        "relevance": 73,
-        "visual_hook": 0,
-        "freshness": 0,
-        "source": 0
-      },
-      "confidence": "rendah",
-      "why_recommended": [
-        "Ada tautan unggahan video di komunitas AI video",
-        "Judul sesuai inspirasi hiburan visual",
-        "Tidak ada metrik views TikTok terverifikasi"
-      ],
-      "source_type": "community_post",
-      "signal_source": "Komunitas AI Video Reddit",
-      "evidence_label": "Posting komunitas; bukan bukti viral atau statistik TikTok",
-      "metrics_verified": false,
-      "approval_status": "menunggu_persetujuan",
-      "creative_brief": {
-        "idea_id": "COMM-1XOZDC0",
-        "duration_seconds": 12,
-        "ratio": "9:16",
-        "angle": "Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-        "source_url": "https://www.reddit.com/r/aivideos/comments/1xozdc0/horror_short_film_paranormal_animals/",
-        "guidance": "Buat karya orisinal; jangan menyalin footage atau desain milik pembuat asal."
-      },
-      "next_agent": "creative_director",
-      "first_seen_at": "2026-11-06",
-      "seen_before": true
+      "first_seen_at": "2026-11-07",
+      "seen_before": false
     }
   ],
   "creative_seeds": [],
@@ -193,9 +155,8 @@
     "next_agent": "creative_director",
     "approval": "pending",
     "top_candidate_ids": [
-      "COMM-1XP4CZF",
-      "COMM-1XOTW6K",
-      "COMM-1XOZDC0"
+      "COMM-1XQ3RKP",
+      "COMM-1XQ6QDU"
     ],
     "lab_candidate_ids": [],
     "note": "Agent 2 belum dijalankan, perlu persetujuan pengguna."
