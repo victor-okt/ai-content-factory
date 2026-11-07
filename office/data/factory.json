@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "pipeline_version": "0.1",
-  "generated_at": "2026-11-07T23:05:32+07:00",
-  "agent_1_checked_at": "2026-11-06T12:28:43+07:00",
+  "generated_at": "2026-11-07T23:17:03+07:00",
+  "agent_1_checked_at": "2026-11-07T23:17:00+07:00",
   "mode": "public_research",
-  "draft_count": 3,
+  "draft_count": 2,
   "agents": [
     {
       "id": "nova",
@@ -51,14 +51,14 @@
   ],
   "jobs": [
     {
-      "content_id": "COMM-1XP4CZF",
-      "title": "Assassin -- Ye Dechun #kungfu #aishorts #indiefilm #cat #chinesedrama #s...",
+      "content_id": "COMM-1XQ3RKP",
+      "title": "Vibe coding satiric/funny music video",
       "origin": "REFERENSI PUBLIK / bukan data TikTok",
       "source_type": "community_post",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xp4czf/assassin_ye_dechun_kungfu_aishorts_indiefilm_cat/",
+      "source_url": "https://www.reddit.com/r/aivideos/comments/1xq3rkp/vibe_coding_satiricfunny_music_video/",
       "score": 79,
       "metrics_verified": false,
-      "inspiration": "Contoh unggahan video komunitas: Assassin -- Ye Dechun #kungfu #aishorts #indiefilm #cat #chinesedrama #s.... Inspirasi orisinal: Bangun kejutan visual yang lucu dan mudah dimengerti tanpa dialog.",
+      "inspiration": "Contoh unggahan video komunitas: Vibe coding satiric/funny music video. Inspirasi orisinal: Bangun kejutan visual yang lucu dan mudah dimengerti tanpa dialog.",
       "creative_director": {
         "method": "template_free_no_llm",
         "status": "draft",
@@ -204,7 +204,7 @@
       },
       "publisher": {
         "status": "draft_not_published",
-        "caption_draft": "Kalau assassin -- ye dechun #kungfu #aishorts #indiefilm #cat #chinesedrama #s... bisa berubah jadi nyata... kamu bakal ngapain? 👀 #AIVideo #VisualStory #ShortFilm",
+        "caption_draft": "Kalau vibe coding satiric/funny music video bisa berubah jadi nyata... kamu bakal ngapain? 👀 #AIVideo #VisualStory #ShortFilm",
         "posting_format": "9:16 vertical short",
         "published_url": "",
         "blocker": "Perlu izin pengguna dan koneksi akun TikTok/Shopee bila publikasi diaktifkan."
@@ -228,7 +228,7 @@
       },
       "open_source_video_plan": {
         "schema_version": 1,
-        "content_id": "COMM-1XP4CZF",
+        "content_id": "COMM-1XQ3RKP",
         "target_duration_seconds": 30,
         "backend": "comfyui_self_hosted",
         "model_candidates": [
@@ -303,14 +303,14 @@
       }
     },
     {
-      "content_id": "COMM-1XOTW6K",
-      "title": "THE COMING | 80s Sci-Fi Alien Invasion Short Film Part 1",
+      "content_id": "COMM-1XQ6QDU",
+      "title": "Payload Preparation #scifi #battlefield #alien #aivideo #aicreator #aijoeuk",
       "origin": "REFERENSI PUBLIK / bukan data TikTok",
       "source_type": "community_post",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xotw6k/the_coming_80s_scifi_alien_invasion_short_film/",
+      "source_url": "https://www.reddit.com/r/aivideos/comments/1xq6qdu/payload_preparation_scifi_battlefield_alien/",
       "score": 73,
       "metrics_verified": false,
-      "inspiration": "Contoh unggahan video komunitas: THE COMING | 80s Sci-Fi Alien Invasion Short Film Part 1. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
+      "inspiration": "Contoh unggahan video komunitas: Payload Preparation #scifi #battlefield #alien #aivideo #aicreator #aijoeuk. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
       "creative_director": {
         "method": "template_free_no_llm",
         "status": "draft",
@@ -456,7 +456,7 @@
       },
       "publisher": {
         "status": "draft_not_published",
-        "caption_draft": "Kalau the coming | 80s sci-fi alien invasion short film part 1 bisa berubah jadi nyata... kamu bakal ngapain? 👀 #AIVideo #VisualStory #ShortFilm",
+        "caption_draft": "Kalau payload preparation #scifi #battlefield #alien #aivideo #aicreator #aijoeuk bisa berubah jadi nyata... kamu bakal ngapain? 👀 #AIVideo #VisualStory #ShortFilm",
         "posting_format": "9:16 vertical short",
         "published_url": "",
         "blocker": "Perlu izin pengguna dan koneksi akun TikTok/Shopee bila publikasi diaktifkan."
@@ -480,259 +480,7 @@
       },
       "open_source_video_plan": {
         "schema_version": 1,
-        "content_id": "COMM-1XOTW6K",
-        "target_duration_seconds": 30,
-        "backend": "comfyui_self_hosted",
-        "model_candidates": [
-          "wan2.2-ti2v-5b",
-          "hunyuanvideo-1.5"
-        ],
-        "render_enabled": false,
-        "requires_gpu_runner": true,
-        "requires_workflow_configuration": true,
-        "requires_owner_approval_for_costs": true,
-        "clips": [
-          {
-            "clip_index": 1,
-            "start_second": 0,
-            "end_second": 5,
-            "duration_seconds": 5,
-            "prompt": "Original cinematic vertical 9:16, 30-second concept. surprising cinematic fantasy, slow push-in, dramatic match cut, reveal. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Sebuah benda atau suasana berubah menjadi dunia visual orisinal. Natural continuous motion, engaging first two seconds.",
-            "status": "planned_not_rendered",
-            "rendered_file": null
-          },
-          {
-            "clip_index": 2,
-            "start_second": 5,
-            "end_second": 10,
-            "duration_seconds": 5,
-            "prompt": "Original cinematic vertical 9:16, 30-second concept. surprising cinematic fantasy, slow push-in, dramatic match cut, reveal. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Sebuah benda atau suasana berubah menjadi dunia visual orisinal. Natural continuous motion, engaging first two seconds.",
-            "status": "planned_not_rendered",
-            "rendered_file": null
-          },
-          {
-            "clip_index": 3,
-            "start_second": 10,
-            "end_second": 15,
-            "duration_seconds": 5,
-            "prompt": "Original cinematic vertical 9:16, 30-second concept. surprising cinematic fantasy, slow push-in, dramatic match cut, reveal. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Sebuah benda atau suasana berubah menjadi dunia visual orisinal. Natural continuous motion, engaging first two seconds.",
-            "status": "planned_not_rendered",
-            "rendered_file": null
-          },
-          {
-            "clip_index": 4,
-            "start_second": 15,
-            "end_second": 20,
-            "duration_seconds": 5,
-            "prompt": "Original cinematic vertical 9:16, 30-second concept. surprising cinematic fantasy, slow push-in, dramatic match cut, reveal. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Sebuah benda atau suasana berubah menjadi dunia visual orisinal. Natural continuous motion, engaging first two seconds.",
-            "status": "planned_not_rendered",
-            "rendered_file": null
-          },
-          {
-            "clip_index": 5,
-            "start_second": 20,
-            "end_second": 25,
-            "duration_seconds": 5,
-            "prompt": "Original cinematic vertical 9:16, 30-second concept. surprising cinematic fantasy, slow push-in, dramatic match cut, reveal. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Sebuah benda atau suasana berubah menjadi dunia visual orisinal. Natural continuous motion, engaging first two seconds.",
-            "status": "planned_not_rendered",
-            "rendered_file": null
-          },
-          {
-            "clip_index": 6,
-            "start_second": 25,
-            "end_second": 30,
-            "duration_seconds": 5,
-            "prompt": "Original cinematic vertical 9:16, 30-second concept. surprising cinematic fantasy, slow push-in, dramatic match cut, reveal. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Sebuah benda atau suasana berubah menjadi dunia visual orisinal. Natural continuous motion, engaging first two seconds.",
-            "status": "planned_not_rendered",
-            "rendered_file": null
-          }
-        ],
-        "assembly": {
-          "tool": "ffmpeg",
-          "strategy": "concat_six_clips_then_add_original_audio",
-          "status": "not_executed"
-        }
-      }
-    },
-    {
-      "content_id": "COMM-1XOZDC0",
-      "title": "horror short film, paranormal animals",
-      "origin": "REFERENSI PUBLIK / bukan data TikTok",
-      "source_type": "community_post",
-      "source_url": "https://www.reddit.com/r/aivideos/comments/1xozdc0/horror_short_film_paranormal_animals/",
-      "score": 73,
-      "metrics_verified": false,
-      "inspiration": "Contoh unggahan video komunitas: horror short film, paranormal animals. Inspirasi orisinal: Uji satu perubahan visual yang kuat dalam 8–15 detik.",
-      "creative_director": {
-        "method": "template_free_no_llm",
-        "status": "draft",
-        "hook": "Coba perhatikan perubahan dalam tiga detik...",
-        "big_idea": "Sebuah benda atau suasana berubah menjadi dunia visual orisinal.",
-        "storyboard": [
-          {
-            "shot": 1,
-            "seconds": [
-              0,
-              5
-            ],
-            "description": "Hook visual: objek dan kejadian mustahil langsung terlihat.",
-            "narration": "Coba perhatikan perubahan dalam tiga detik..."
-          },
-          {
-            "shot": 2,
-            "seconds": [
-              5,
-              10
-            ],
-            "description": "Perkenalkan karakter dan tujuan yang jelas.",
-            "narration": "Biarkan aksi visual bercerita."
-          },
-          {
-            "shot": 3,
-            "seconds": [
-              10,
-              15
-            ],
-            "description": "Perubahan pertama dan eskalasi konflik.",
-            "narration": "Bangun rasa penasaran."
-          },
-          {
-            "shot": 4,
-            "seconds": [
-              15,
-              20
-            ],
-            "description": "Perubahan kedua dengan gerakan kamera konsisten.",
-            "narration": "Pertahankan kesinambungan karakter."
-          },
-          {
-            "shot": 5,
-            "seconds": [
-              20,
-              25
-            ],
-            "description": "Puncak aksi dan kejutan visual.",
-            "narration": "Tunjukkan payoff."
-          },
-          {
-            "shot": 6,
-            "seconds": [
-              25,
-              30
-            ],
-            "description": "Sebuah benda atau suasana berubah menjadi dunia visual orisinal.",
-            "narration": "Akhiri dengan twist yang bisa di-loop."
-          }
-        ],
-        "duration_seconds": 30,
-        "format": "9:16",
-        "originality": "Hasil harus berupa karya orisinal; sumber hanya inspirasi, bukan untuk ditiru."
-      },
-      "visual_creator": {
-        "status": "prompt_ready_not_rendered",
-        "image_prompt": "Original cinematic vertical 9:16, 30-second concept. surprising cinematic fantasy, slow push-in, dramatic match cut, reveal. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Sebuah benda atau suasana berubah menjadi dunia visual orisinal.",
-        "reference_frames": [
-          "Frame 1: Hook visual: objek dan kejadian mustahil langsung terlihat.",
-          "Frame 2: Perkenalkan karakter dan tujuan yang jelas.",
-          "Frame 3: Perubahan pertama dan eskalasi konflik.",
-          "Frame 4: Perubahan kedua dengan gerakan kamera konsisten.",
-          "Frame 5: Puncak aksi dan kejutan visual.",
-          "Frame 6: Sebuah benda atau suasana berubah menjadi dunia visual orisinal."
-        ],
-        "character_consistency": "Gunakan karakter dan wardrobe original yang identik sepanjang adegan.",
-        "rendered_images": []
-      },
-      "video_producer": {
-        "status": "render_blocked",
-        "duration_seconds": 30,
-        "shot_timeline": [
-          {
-            "shot": 1,
-            "seconds": [
-              0,
-              5
-            ],
-            "description": "Hook visual: objek dan kejadian mustahil langsung terlihat.",
-            "narration": "Coba perhatikan perubahan dalam tiga detik..."
-          },
-          {
-            "shot": 2,
-            "seconds": [
-              5,
-              10
-            ],
-            "description": "Perkenalkan karakter dan tujuan yang jelas.",
-            "narration": "Biarkan aksi visual bercerita."
-          },
-          {
-            "shot": 3,
-            "seconds": [
-              10,
-              15
-            ],
-            "description": "Perubahan pertama dan eskalasi konflik.",
-            "narration": "Bangun rasa penasaran."
-          },
-          {
-            "shot": 4,
-            "seconds": [
-              15,
-              20
-            ],
-            "description": "Perubahan kedua dengan gerakan kamera konsisten.",
-            "narration": "Pertahankan kesinambungan karakter."
-          },
-          {
-            "shot": 5,
-            "seconds": [
-              20,
-              25
-            ],
-            "description": "Puncak aksi dan kejutan visual.",
-            "narration": "Tunjukkan payoff."
-          },
-          {
-            "shot": 6,
-            "seconds": [
-              25,
-              30
-            ],
-            "description": "Sebuah benda atau suasana berubah menjadi dunia visual orisinal.",
-            "narration": "Akhiri dengan twist yang bisa di-loop."
-          }
-        ],
-        "video_prompt": "Original cinematic vertical 9:16, 30-second concept. surprising cinematic fantasy, slow push-in, dramatic match cut, reveal. Visual subject inspired by a public topic but redesigned as a fully original character, world and composition. Never copy a named artist, copyrighted footage, brand logo, or recognizable existing character. Clean lighting, stable anatomy, consistent objects, no watermark, no text. Subject direction: Sebuah benda atau suasana berubah menjadi dunia visual orisinal. Natural continuous motion, engaging first two seconds.",
-        "editing_notes": "Utamakan visual storytelling, sound design orisinal, dan looping ending.",
-        "rendered_video_url": "",
-        "blocker": "Perlu provider video, koneksi akun, kredit, dan batas biaya."
-      },
-      "publisher": {
-        "status": "draft_not_published",
-        "caption_draft": "Kalau horror short film, paranormal animals bisa berubah jadi nyata... kamu bakal ngapain? 👀 #AIVideo #VisualStory #ShortFilm",
-        "posting_format": "9:16 vertical short",
-        "published_url": "",
-        "blocker": "Perlu izin pengguna dan koneksi akun TikTok/Shopee bila publikasi diaktifkan."
-      },
-      "analyst": {
-        "status": "waiting_platform_analytics",
-        "platform_views": null,
-        "retention": null,
-        "revenue": null,
-        "blocker": "Belum tersedia koneksi data analytics TikTok."
-      },
-      "approval": {
-        "creative_draft": "auto_generated_unreviewed",
-        "render": "requires_access_and_budget",
-        "publish": "requires_user_approval"
-      },
-      "external_actions": {
-        "image_generation": false,
-        "video_generation": false,
-        "posting": false
-      },
-      "open_source_video_plan": {
-        "schema_version": 1,
-        "content_id": "COMM-1XOZDC0",
+        "content_id": "COMM-1XQ6QDU",
         "target_duration_seconds": 30,
         "backend": "comfyui_self_hosted",
         "model_candidates": [
