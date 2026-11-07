@@ -1,0 +1,19 @@
+services:
+  office-worker:
+    build:
+      context: ../..
+      dockerfile: deploy/vps/Dockerfile
+    restart: unless-stopped
+    init: true
+    environment:
+      TZ: Asia/Jakarta
+      OFFICE_DATA_DIR: /data
+      WORKER_INTERVAL_SECONDS: "300"
+      ALLOW_PAID_API: "false"
+      AUTO_PUBLISH: "false"
+    volumes:
+      - office_data:/data
+    mem_limit: 512m
+    cpus: "1.0"
+volumes:
+  office_data:
