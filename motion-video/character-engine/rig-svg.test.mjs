@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {renderSvg} from './rig-svg.mjs';
+test('SVG diagnostic frame',()=>{const s=renderSvg();assert.match(s,/^<svg /);assert.match(s,/DIAGNOSTIC ONLY/);assert.match(s,/<\/svg>$/)});
+test('three character rigs',()=>{for(const c of ['kitsune','wukong','tengu'])assert.match(renderSvg({character:c,time:1}),new RegExp(c))});
+test('audio mouth opens',()=>{const s=renderSvg({time:.35,actions:[{type:'speak',start:0,end:1}],syllables:[{start:.1,end:.7,energy:1}]});assert.match(s,/mouthOpen/);assert.doesNotMatch(s,/mouthClosed/)});
+test('silent mouth closed',()=>assert.match(renderSvg({time:1}),/mouthClosed/));
+test('reject external images',()=>assert.throws(()=>renderSvg({layers:{head:'https://example.com/a.png'}}),/data URI/));
+test('reject unknown layers and dimensions',()=>{assert.throws(()=>renderSvg({layers:{foo:'a'}}));assert.throws(()=>renderSvg({width:0}))});
+test('deterministic output',()=>assert.equal(renderSvg({time:1.3}),renderSvg({time:1.3})));
