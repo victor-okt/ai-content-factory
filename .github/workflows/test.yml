@@ -8,4 +8,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest discover -s tests -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Python tests (pipeline, dashboard, Trend Hunter)
+        run: python -m unittest discover -s tests -v
+      - name: Worker queue tests
+        run: python -m unittest discover -s office/runtime -p "test_*.py" -v
+      - name: Story bank tests
+        run: python -m unittest -v motion-video/stories/test_story_bank.py
+      - name: Character engine tests (Node)
+        run: node --test motion-video/character-engine/*.test.mjs
+  windows-worker:
+    # Memeriksa worker di Windows sungguhan (komputer pemilik memakai Windows).
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Worker queue tests on Windows
+        run: python -m unittest discover -s office/runtime -p "test_*.py" -v
