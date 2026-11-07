@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validateEpisode,wrapSubtitle,timedSubtitles,subtitleSafeRect} from './episode-qa.mjs';
+const shots=[{start:0,end:5,actions:[{type:'walk'}]},{start:5,end:11,actions:[{type:'reach'}]},{start:11,end:18,actions:[{type:'speak'}]}];
+test('contiguous acting shots pass',()=>assert.equal(validateEpisode({shots}).duration,18));
+test('rejects passive slideshow',()=>assert.throws(()=>validateEpisode({shots:shots.map(s=>({...s,actions:[]}))}),/act/));
+test('rejects camera shaking',()=>assert.throws(()=>validateEpisode({shots:[{...shots[0],cameraMotion:'shake'},...shots.slice(1)]}),/camera/));
+test('rejects baked subtitles',()=>assert.throws(()=>validateEpisode({shots:[{...shots[0],bakedText:true},...shots.slice(1)]}),/baked/));
+test('wraps Indonesian text',()=>assert.deepEqual(wrapSubtitle('Seekor rubah kecil menemukan sebuah lentera yang sudah lama hilang'),['Seekor rubah kecil','menemukan sebuah lentera','yang sudah lama hilang']));
+test('short timed captions',()=>{const words=['Aku','takut','tapi','aku','mencoba','lagi'];const cues=timedSubtitles(words.map((word,i)=>({word,start:i*.7,end:i*.7+.5})));assert(cues.every(c=>c.text.split('\n').length<=2))});
+test('portrait safe area',()=>{const r=subtitleSafeRect();assert(r.y+r.height<=1920&&r.x>0)});
+test('rejects overlapping speech timing',()=>assert.throws(()=>timedSubtitles([{word:'A',start:0,end:1},{word:'B',start:.5,end:2}]),/overlap/));
