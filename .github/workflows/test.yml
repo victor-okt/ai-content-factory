@@ -19,6 +19,19 @@ jobs:
         run: python -m unittest -v motion-video/stories/test_story_bank.py
       - name: Character engine tests (Node)
         run: node --test motion-video/character-engine/*.test.mjs
+  puppet:
+    # Puppet Kitsune: bukti bagian tubuh bergerak sendiri-sendiri (tanpa ffmpeg).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install puppet dependencies
+        run: python -m pip install pillow numpy scipy
+      - name: Puppet tests
+        working-directory: motion-video/puppet
+        run: python -m unittest -v test_puppet
   windows-worker:
     # Memeriksa worker di Windows sungguhan (komputer pemilik memakai Windows).
     runs-on: windows-latest
