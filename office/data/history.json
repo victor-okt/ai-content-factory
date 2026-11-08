@@ -20,6 +20,16 @@
       "community_examples": 2,
       "news_and_search_signals": 0,
       "source_errors": 0
+    },
+    {
+      "date": "2026-11-08",
+      "checked_at": "2026-11-08T08:31:57+07:00",
+      "status": "ok",
+      "items_scanned": 82,
+      "qualifying_examples": 3,
+      "community_examples": 3,
+      "news_and_search_signals": 0,
+      "source_errors": 0
     }
   ]
 }
