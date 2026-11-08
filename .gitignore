@@ -4,3 +4,6 @@ __pycache__/
 .env
 office/runtime/runtime-data/
 *.log
+motion-video/puppet/*.mp4
+motion-video/puppet/*.pose.json
+__pycache__/
