@@ -1,0 +1,18 @@
+{
+ "nama": "Wukong",
+ "bagian": {
+  "badan":        {"file": "badan.png",        "pivot": [140, 440], "z": 0},
+  "ekor":         {"file": "ekor.png",         "pivot": [20, 255],  "induk": "badan", "tempel": [225, 225], "z": -5, "skala": 0.85},
+  "kaki_kiri":    {"file": "kaki_kiri.png",    "pivot": [78, 12],   "induk": "badan", "tempel": [100, 255], "z": -2},
+  "kaki_kanan":   {"file": "kaki_kanan.png",   "pivot": [80, 12],   "induk": "badan", "tempel": [190, 255], "z": -2},
+  "lengan_kiri":  {"file": "lengan_kiri.png",  "pivot": [98, 22],   "induk": "badan", "tempel": [45, 75],   "z": 3},
+  "tongkat":      {"file": "tongkat.png",      "pivot": [70, 360],  "induk": "lengan_kiri", "tempel": [45, 190], "z": 2, "skala": 0.75, "sudut": 5},
+  "lengan_kanan": {"file": "lengan_kanan.png", "pivot": [40, 22],   "induk": "badan", "tempel": [235, 75],  "z": 3},
+  "syal":         {"file": "syal.png",         "pivot": [25, 90],   "induk": "badan", "tempel": [190, 30],  "z": -1, "skala": 0.7},
+  "kepala":       {"file": "kepala.png",       "pivot": [206, 335], "induk": "badan", "tempel": [140, 35],  "z": 6, "skala": 0.95}
+ },
+ "wajah": {"bagian": "kepala", "kulit": [250, 222, 200], "garis": [50, 20, 20], "tebal": 5,
+           "mata": [[107, 207, 193, 278], [247, 205, 313, 272]],
+           "tambal_mulut": [190, 276, 258, 330],
+           "mulut": [223, 284], "lebar_mulut": 30, "tinggi_mulut": 28}
+}

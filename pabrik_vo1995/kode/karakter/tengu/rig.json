@@ -1,0 +1,146 @@
+{
+ "nama": "Tengu",
+ "bagian": {
+  "badan": {
+   "file": "badan.png",
+   "pivot": [
+    160,
+    520
+   ],
+   "z": 0
+  },
+  "sayap_kiri": {
+   "file": "sayap_kiri.png",
+   "pivot": [
+    235,
+    50
+   ],
+   "induk": "badan",
+   "tempel": [
+    90,
+    70
+   ],
+   "z": -6
+  },
+  "sayap_kanan": {
+   "file": "sayap_kanan.png",
+   "pivot": [
+    30,
+    45
+   ],
+   "induk": "badan",
+   "tempel": [
+    230,
+    70
+   ],
+   "z": -6
+  },
+  "kaki_kiri": {
+   "file": "kaki_kiri.png",
+   "pivot": [
+    85,
+    15
+   ],
+   "induk": "badan",
+   "tempel": [
+    110,
+    315
+   ],
+   "z": -2
+  },
+  "kaki_kanan": {
+   "file": "kaki_kanan.png",
+   "pivot": [
+    82,
+    15
+   ],
+   "induk": "badan",
+   "tempel": [
+    210,
+    315
+   ],
+   "z": -2
+  },
+  "lengan_kiri": {
+   "file": "lengan_kiri.png",
+   "pivot": [
+    150,
+    32
+   ],
+   "induk": "badan",
+   "tempel": [
+    45,
+    65
+   ],
+   "z": 3
+  },
+  "kipas": {
+   "file": "kipas.png",
+   "pivot": [
+    150,
+    200
+   ],
+   "induk": "lengan_kiri",
+   "tempel": [
+    55,
+    185
+   ],
+   "z": 4,
+   "skala": 0.85
+  },
+  "lengan_kanan": {
+   "file": "lengan_kanan.png",
+   "pivot": [
+    35,
+    32
+   ],
+   "induk": "badan",
+   "tempel": [
+    275,
+    65
+   ],
+   "z": 3
+  },
+  "kepala": {
+   "file": "kepala.png",
+   "pivot": [
+    255,
+    335
+   ],
+   "induk": "badan",
+   "tempel": [
+    160,
+    30
+   ],
+   "z": 6
+  }
+ },
+ "wajah": {
+  "bagian": "kepala",
+  "kulit": [
+   200,
+   50,
+   45
+  ],
+  "garis": [
+   30,
+   10,
+   10
+  ],
+  "tebal": 5,
+  "mata": [
+   [
+    255,
+    230,
+    300,
+    262
+   ],
+   [
+    165,
+    230,
+    210,
+    262
+   ]
+  ]
+ }
+}

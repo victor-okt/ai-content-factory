@@ -1,0 +1,675 @@
+{
+ "judul": "Kenapa makin banyak… malah makin nggak bahagia?",
+ "lama_judul": 3.0,
+ "latar": "latar/kedai_jajanan.png",
+ "subtitle_y": 1450,
+ "pemain": {
+  "kitsune": {
+   "nama": "Kitsune",
+   "x": 215,
+   "y": 1790,
+   "tinggi": 930,
+   "hadap": "kanan"
+  },
+  "victor": {
+   "nama": "Victor",
+   "x": 545,
+   "y": 1800,
+   "tinggi": 1040,
+   "z": 1
+  },
+  "wukong": {
+   "nama": "Wukong",
+   "x": 880,
+   "y": 1800,
+   "tinggi": 900,
+   "hadap": "kiri"
+  }
+ },
+ "depan": [
+  {
+   "file": "properti/meja_kedai.png",
+   "x": 540,
+   "y": 1920,
+   "lebar": 1080
+  }
+ ],
+ "properti": [
+  {
+   "file": "properti/teko.png",
+   "x": 150,
+   "y": 1560,
+   "lebar": 150
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 830,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 4,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 864,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 4,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 898,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 4,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 932,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 4,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 830,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 4,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 864,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 4,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 898,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 4,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 932,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 4,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 830,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 864,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 898,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 932,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 830,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 864,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 898,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 932,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 830,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 864,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 898,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 932,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 830,
+   "y": 1467,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 864,
+   "y": 1467,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 898,
+   "y": 1467,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 932,
+   "y": 1467,
+   "lebar": 105,
+   "dari": 5,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 510,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 1,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 544,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 0,
+   "sampai": 1,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 510,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 544,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 578,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 612,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 510,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 544,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 578,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 612,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 510,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 544,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 578,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 612,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 2,
+   "sampai": 7,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 510,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 544,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 578,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 612,
+   "y": 1545,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 510,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 544,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 578,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 612,
+   "y": 1519,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 510,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 544,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  },
+  {
+   "file": "properti/dango.png",
+   "x": 578,
+   "y": 1493,
+   "lebar": 105,
+   "dari": 8,
+   "sampai": 99,
+   "lapis": "depan"
+  }
+ ],
+ "adegan": [
+  {
+   "siapa": "wukong",
+   "teks": "Lihat! Dango-ku sudah delapan tusuk!",
+   "aksi": "tertawa",
+   "ekspresi": "tertawa",
+   "efek": [
+    {
+     "jenis": "kilau",
+     "siapa": "wukong",
+     "tempat": "samping"
+    }
+   ],
+   "reaksi": [
+    {
+     "siapa": "victor",
+     "ekspresi": "kaget",
+     "mulai": 0.6
+    }
+   ]
+  },
+  {
+   "siapa": "victor",
+   "teks": "Delapan?! Punyaku cuma dua...",
+   "aksi": "kaget",
+   "ekspresi": "kaget",
+   "kamera": "dekat",
+   "efek": [
+    {
+     "jenis": "ledak",
+     "siapa": "victor",
+     "tempat": "samping",
+     "lama": 0.6
+    }
+   ]
+  },
+  {
+   "siapa": "victor",
+   "teks": "Bu, tambah sepuluh tusuk! Aku nggak mau kalah!",
+   "aksi": "semangat",
+   "ekspresi": "marah",
+   "efek": [
+    {
+     "jenis": "asap",
+     "siapa": "victor",
+     "tempat": "samping",
+     "mulai": 0.4
+    }
+   ],
+   "reaksi": [
+    {
+     "siapa": "kitsune",
+     "aksi": "geleng"
+    }
+   ]
+  },
+  {
+   "siapa": "kitsune",
+   "teks": "Victor... kamu sudah coba satu?",
+   "aksi": "pikir"
+  },
+  {
+   "siapa": "victor",
+   "teks": "Belum! Nanti saja. Yang penting punyaku lebih banyak!",
+   "aksi": "tunjuk",
+   "ekspresi": "pusing",
+   "reaksi": [
+    {
+     "siapa": "wukong",
+     "ekspresi": "kaget",
+     "mulai": 0.8
+    }
+   ]
+  },
+  {
+   "siapa": "wukong",
+   "teks": "Hah?! Kalau begitu aku tambah delapan lagi!",
+   "aksi": "loncat",
+   "ekspresi": "marah",
+   "efek": [
+    {
+     "jenis": "debu",
+     "siapa": "wukong",
+     "tempat": "dada"
+    }
+   ]
+  },
+  {
+   "siapa": "victor",
+   "teks": "Perutku penuh... tapi aku belum menikmati satu pun...",
+   "aksi": "sedih",
+   "ekspresi": "menangis",
+   "kamera": "dekat",
+   "ekspresi_penuh": true
+  },
+  {
+   "siapa": "kitsune",
+   "teks": "Coba ambil satu saja. Makan pelan-pelan.",
+   "aksi": "angguk",
+   "ekspresi": "senang",
+   "reaksi": [
+    {
+     "siapa": "victor",
+     "ekspresi": "malu"
+    }
+   ]
+  },
+  {
+   "siapa": "victor",
+   "teks": "Eh, ternyata enak banget.",
+   "aksi": "angguk",
+   "ekspresi": "berbinar",
+   "kamera": "dekat",
+   "ekspresi_penuh": true,
+   "efek": [
+    {
+     "jenis": "kilau",
+     "siapa": "victor",
+     "tempat": "kepala",
+     "lama": 1.2
+    }
+   ]
+  },
+  {
+   "siapa": "wukong",
+   "teks": "Lho? Kok kamu kelihatan lebih senang dari aku?",
+   "aksi": "geleng",
+   "ekspresi": "sedih",
+   "reaksi": [
+    {
+     "siapa": "victor",
+     "ekspresi": "senang"
+    }
+   ]
+  },
+  {
+   "siapa": "kitsune",
+   "teks": "Bahagia itu bukan soal punya lebih banyak dari orang lain...",
+   "aksi": "bicara",
+   "ekspresi": "senang",
+   "kamera": "dekat",
+   "zoom": 1.25
+  },
+  {
+   "siapa": "kitsune",
+   "teks": "...tapi menikmati yang sudah ada di tanganmu.",
+   "aksi": "bicara",
+   "ekspresi": "senang",
+   "kamera": "dekat",
+   "zoom": 1.25,
+   "efek": [
+    {
+     "jenis": "kilau",
+     "siapa": "kitsune",
+     "tempat": "samping",
+     "lama": 1.2
+    }
+   ]
+  },
+  {
+   "siapa": "victor",
+   "teks": "Ayo, kita makan bareng saja!",
+   "aksi": "lambai",
+   "ekspresi": "senang",
+   "reaksi": [
+    {
+     "siapa": "wukong",
+     "aksi": "tertawa",
+     "ekspresi": "tertawa"
+    },
+    {
+     "siapa": "kitsune",
+     "aksi": "angguk",
+     "ekspresi": "senang"
+    }
+   ]
+  }
+ ],
+ "ajakan": {
+  "durasi": 3.8,
+  "pertanyaan": "Kamu lagi sibuk membandingkan apa dengan orang lain?",
+  "komentar": "Jawab satu kata di komentar",
+  "ikuti": "Ikuti VO1995 — besok giliran Tengu!"
+ },
+ "suara": {
+  "kitsune": "suara/kitsune.wav",
+  "victor": "suara/victor.wav",
+  "wukong": "suara/wukong.wav"
+ }
+}

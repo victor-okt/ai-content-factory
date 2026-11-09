@@ -1,0 +1,169 @@
+{
+ "nama": "Kitsune",
+ "tinggi": 700,
+ "bagian": {
+  "badan": {
+   "file": "badan.png",
+   "pivot": [
+    155,
+    405
+   ],
+   "z": 0
+  },
+  "kaki_kiri": {
+   "file": "kaki_kiri.png",
+   "pivot": [
+    46,
+    10
+   ],
+   "induk": "badan",
+   "tempel": [
+    118,
+    235
+   ],
+   "z": -2
+  },
+  "kaki_kanan": {
+   "file": "kaki_kanan.png",
+   "pivot": [
+    44,
+    10
+   ],
+   "induk": "badan",
+   "tempel": [
+    192,
+    235
+   ],
+   "z": -2
+  },
+  "ekor": {
+   "file": "ekor.png",
+   "pivot": [
+    235,
+    175
+   ],
+   "induk": "badan",
+   "tempel": [
+    70,
+    200
+   ],
+   "z": -5
+  },
+  "katana": {
+   "file": "katana.png",
+   "pivot": [
+    55,
+    150
+   ],
+   "induk": "badan",
+   "tempel": [
+    262,
+    150
+   ],
+   "z": -1,
+   "sudut": 10
+  },
+  "lengan_kiri": {
+   "file": "lengan_kiri.png",
+   "pivot": [
+    88,
+    22
+   ],
+   "induk": "badan",
+   "tempel": [
+    62,
+    52
+   ],
+   "z": 3
+  },
+  "lengan_kanan": {
+   "file": "lengan_kanan.png",
+   "pivot": [
+    30,
+    22
+   ],
+   "induk": "badan",
+   "tempel": [
+    248,
+    52
+   ],
+   "z": 3
+  },
+  "lentera": {
+   "file": "lentera.png",
+   "pivot": [
+    67,
+    8
+   ],
+   "induk": "lengan_kanan",
+   "tempel": [
+    62,
+    150
+   ],
+   "z": 4,
+   "skala": 0.85
+  },
+  "kepala": {
+   "file": "kepala.png",
+   "pivot": [
+    369,
+    385
+   ],
+   "induk": "badan",
+   "tempel": [
+    155,
+    28
+   ],
+   "z": 6,
+   "skala": 0.8
+  },
+  "syal": {
+   "file": "syal.png",
+   "pivot": [
+    105,
+    60
+   ],
+   "induk": "badan",
+   "tempel": [
+    148,
+    22
+   ],
+   "z": 5,
+   "skala": 0.85
+  }
+ },
+ "wajah": {
+  "bagian": "kepala",
+  "kulit": [
+   250,
+   232,
+   220
+  ],
+  "garis": [
+   45,
+   18,
+   18
+  ],
+  "tebal": 5,
+  "mata": [
+   [
+    260,
+    297,
+    334,
+    341
+   ],
+   [
+    392,
+    294,
+    438,
+    338
+   ]
+  ],
+  "mulut": [
+   369,
+   359
+  ],
+  "lebar_mulut": 22,
+  "tinggi_mulut": 20
+ }
+}

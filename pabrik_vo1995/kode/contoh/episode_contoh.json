@@ -1,0 +1,83 @@
+{
+ "judul": "Uji pabrik: Payung yang Takut Hujan (cuplikan)",
+ "latar": "latar/jalan_sore.png",
+ "pemain": {
+  "kitsune": {
+   "nama": "Kitsune",
+   "x": 290,
+   "y": 1560,
+   "tinggi": 700,
+   "hadap": "kanan",
+   "z": 1
+  },
+  "victor": {
+   "nama": "Victor",
+   "x": 820,
+   "y": 1570,
+   "tinggi": 760,
+   "hadap": "kiri"
+  },
+  "wukong": {
+   "nama": "Wukong",
+   "x": 1400,
+   "y": 1580,
+   "tinggi": 620,
+   "hadap": "kiri",
+   "z": 2
+  }
+ },
+ "suara": {
+  "kitsune": "suara/narasi_uji.mp3"
+ },
+ "adegan": [
+  {
+   "siapa": "kitsune",
+   "teks": "Suatu hari, seekor rubah kecil menemukan payung yang takut hujan.",
+   "aksi": "tunjuk",
+   "reaksi": [
+    {
+     "siapa": "victor",
+     "aksi": "kaget"
+    }
+   ]
+  },
+  {
+   "siapa": "victor",
+   "teks": "Payung takut hujan? Serius?",
+   "aksi": "geleng",
+   "durasi": 2.2
+  },
+  {
+   "siapa": "kitsune",
+   "teks": "Aneh, bukan? Padahal tugas payung adalah melindungi orang dari hujan.",
+   "aksi": "pikir",
+   "pindah": {
+    "wukong": 560
+   },
+   "lama_pindah": 1.6
+  },
+  {
+   "siapa": "wukong",
+   "teks": "Hahaha! Mungkin dia cuma belum pernah mencoba!",
+   "aksi": "tertawa",
+   "durasi": 2.8,
+   "reaksi": [
+    {
+     "siapa": "kitsune",
+     "aksi": "angguk"
+    },
+    {
+     "siapa": "victor",
+     "aksi": "tertawa"
+    }
+   ]
+  },
+  {
+   "siapa": "victor",
+   "teks": "Komen: kamu pernah takut mencoba hal baru?",
+   "aksi": "lambai",
+   "durasi": 2.6,
+   "emosi": "senang"
+  }
+ ]
+}

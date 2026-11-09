@@ -1,0 +1,16 @@
+{
+ "nama": "Victor",
+ "bagian": {
+  "badan":        {"file": "badan.png",        "pivot": [210, 960], "z": 0},
+  "ransel":       {"file": "ransel.png",       "pivot": [176, 170], "induk": "badan", "tempel": [120, 230], "z": -6, "skala": 0.8},
+  "kaki_kiri":    {"file": "kaki_kiri.png",    "pivot": [120, 40],  "induk": "badan", "tempel": [150, 470], "z": -2, "skala": 0.85},
+  "kaki_kanan":   {"file": "kaki_kanan.png",   "pivot": [118, 40],  "induk": "badan", "tempel": [270, 470], "z": -2, "skala": 0.85},
+  "lengan_kiri":  {"file": "lengan_kiri.png",  "pivot": [115, 45],  "induk": "badan", "tempel": [70, 110],  "z": 3, "skala": 0.85},
+  "lengan_kanan": {"file": "lengan_kanan.png", "pivot": [95, 45],   "induk": "badan", "tempel": [350, 110], "z": 3, "skala": 0.85},
+  "kepala":       {"file": "kepala.png",       "pivot": [340, 520], "induk": "badan", "tempel": [210, 60],  "z": 6, "skala": 0.85}
+ },
+ "wajah": {"bagian": "kepala", "kulit": [253, 216, 183], "garis": [40, 25, 25], "tebal": 7,
+           "mata": [[201, 347, 318, 427], [389, 343, 502, 423]],
+           "tambal_mulut": [318, 450, 396, 476],
+           "mulut": [357, 455], "lebar_mulut": 34, "tinggi_mulut": 30}
+}
